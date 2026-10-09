@@ -1,0 +1,57 @@
+{
+  "services": [
+    {
+      "id": 226,
+      "superscript": null,
+      "name": "To Bank Account",
+      "description": "Transfers to bank accounts are free",
+      "action": "otravel://transfer/entrance?transfer_tab=bank&guest=true",
+      "labelId": "",
+      "service_id": 1,
+      "superscript_url": "https://www.opayweb.com/image/image/f2c93389e719030b0e237104a691ffb0.png",
+      "img_url": "https://www.opayweb.com/image/image/35404399dd913e3bbb9aae435b9d3f7c.png",
+      "bg_color": "",
+      "des_color": ""
+    },
+    {
+      "id": 227,
+      "superscript": null,
+      "name": "To OPay Account",
+      "description": "Transfers to OPay accounts are free",
+      "action": "otravel://transfer/entrance",
+      "labelId": "",
+      "service_id": 1,
+      "superscript_url": "https://www.opayweb.com/image/image/f2c93389e719030b0e237104a691ffb0.png",
+      "img_url": "https://www.opayweb.com/image/image/d4d27927961118c41ccc90159495f60b.png",
+      "bg_color": "",
+      "des_color": ""
+    },
+    {
+      "id": 228,
+      "superscript": null,
+      "name": "Scan QR Code",
+      "description": "Scan the QR of any OPay user to transfer",
+      "action": "otravel://qrscan/entrance",
+      "labelId": "",
+      "service_id": 1,
+      "superscript_url": null,
+      "img_url": "https://www.opayweb.com/image/image/ec77430d6bc78019626e85e9c2ff4db3.png",
+      "bg_color": "",
+      "des_color": ""
+    },
+    {
+      "id": 313,
+      "superscript": null,
+      "name": "Request Money From Others",
+      "description": "Request for money from friends & family",
+      "action": "otravel://request_money/entrance",
+      "labelId": "",
+      "service_id": 1,
+      "superscript_url": null,
+      "img_url": "https://www.opayweb.com/image/image/73a1c1ce2df5435a2260acdd2abccf06.png",
+      "bg_color": "",
+      "des_color": ""
+    }
+  ],
+  "banners": null
+}

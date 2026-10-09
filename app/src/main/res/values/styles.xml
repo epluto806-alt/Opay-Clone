@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.OPayClone" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/opay_mint</item>
+        <item name="colorOnPrimary">@color/opay_white</item>
+        <item name="colorPrimaryDark">@color/opay_mint_dark</item>
+        <item name="android:statusBarColor">@color/opay_white</item>
+        <item name="android:windowBackground">@color/opay_white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="OtpBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">3dp</item>
+        <item name="android:layout_marginEnd">3dp</item>
+        <item name="android:background">@drawable/bg_input_field</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">textVisiblePassword|textNoSuggestions</item>
+        <item name="android:maxLength">2</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/opay_text_primary</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+    <style name="QuickAccessCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
+    <style name="QuickAccessIcon">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+    </style>
+    <style name="QuickAccessLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:textColor">#0A0A0A</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/pay_poppins_regular</item>
+    </style>
+    <style name="AirtimeAmountChip">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/bg_input_field</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#0A0A0A</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/pay_poppins_medium</item>
+    </style>
+    <style name="CSGridCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">8dp</item>
+    </style>
+    <style name="CSGridIcon">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/bg_cs_tile</item>
+    </style>
+    <style name="CSGridLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textColor">#0A0A0A</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/pay_poppins_regular</item>
+    </style>
+    <style name="CSHelpTab">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">18dp</item>
+        <item name="android:textColor">#6A6A6A</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/pay_poppins_medium</item>
+    </style>
+    <style name="CSHelpItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+    <style name="CSHelpNum">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#F5A623</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="CSHelpText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#0A0A0A</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/pay_poppins_regular</item>
+    </style>
+    <style name="CSHelpArrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#8497A4</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="CSHelpDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:layout_marginStart">56dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:background">#EEEEEE</item>
+    </style>
+    <style name="MERow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+    <style name="MERowIcon">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+    <style name="MERowTitle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#D9000000</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/pay_poppins_regular</item>
+    </style>
+    <style name="MERowTitleInner">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#D9000000</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/pay_poppins_regular</item>
+    </style>
+    <style name="MERowSubtitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:textColor">#8497A4</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/pay_poppins_regular</item>
+    </style>
+    <style name="MERowTextCol">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="MERowArrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#8497A4</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="MEDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:layout_marginStart">60dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:background">#EEEEEE</item>
+    </style>
+    <style name="MERowChevron" parent="MERowArrow" />
+    <style name="MeRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+    <style name="MeRowIcon1">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_marginEnd">12dp</item>
+    </style>
+    <style name="MeRowIcon2">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginEnd">12dp</item>
+    </style>
+    <style name="MeRowTitle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#0A0A0A</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/pay_poppins_regular</item>
+    </style>
+    <style name="MeRowTitleInner">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#0A0A0A</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/pay_poppins_regular</item>
+    </style>
+    <style name="MeRowSubtitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:textColor">#8497A4</item>
+        <item name="android:textSize">9sp</item>
+        <item name="android:fontFamily">@font/pay_poppins_regular</item>
+    </style>
+    <style name="MeRowTextCol">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="MeRowChevron">
+        <item name="android:layout_width">14dp</item>
+        <item name="android:layout_height">14dp</item>
+    </style>
+    <style name="MeRowDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#F0F0F0</item>
+    </style>
+    <style name="Theme.OPayClone.Splash" parent="Theme.OPayClone">
+        <item name="android:windowBackground">@drawable/opay_background</item>
+        <item name="android:statusBarColor">#00B876</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <style name="TransparentBottomSheet" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style></resources>
+
+
+
+
+
+
+
+

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/opay_white">
+
+    <TextView
+        android:id="@+id/tvBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OPay"
+        android:textColor="#1A1A5C"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_avatar_circle"
+        android:src="@drawable/opay_me_avatar_male"
+        android:padding="2dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/tvBrand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUserLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="User(080****0000)"
+        android:textColor="#0A0A0A"
+        android:textSize="15sp"
+        android:fontFamily="@font/pay_poppins_medium"
+        app:layout_constraintTop_toBottomOf="@id/imgAvatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgFingerprint"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/opay_fingerprint_icon"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        
+        app:layout_constraintTop_toBottomOf="@id/tvUserLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvFingerprintHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Click to log in with Fingerprint"
+        android:textColor="#00B876"
+        android:textSize="14sp"
+        android:fontFamily="@font/pay_poppins_medium"
+        app:layout_constraintTop_toBottomOf="@id/imgFingerprint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVerifyFingerprint"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="14dp"
+        android:text="Verify Fingerprint"
+        android:textAllCaps="false"
+        android:textColor="@color/opay_white"
+        android:textSize="13sp"
+        app:backgroundTint="@color/opay_green"
+        app:cornerRadius="22dp"
+        app:layout_constraintTop_toBottomOf="@id/tvFingerprintHint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bottomLinks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvSwitchAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Switch Account"
+            android:textColor="#00B876"
+            android:textSize="13sp"
+            android:fontFamily="@font/pay_poppins_medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:text="|"
+            android:textColor="#B0B0B0"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvLoginPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login with Password"
+            android:textColor="#00B876"
+            android:textSize="13sp"
+            android:fontFamily="@font/pay_poppins_medium" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

@@ -1,0 +1,53 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.opay.clone'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.opay.clone"
+        minSdk 24
+        targetSdk 34
+        versionCode 999999999
+        versionName "8.14.1"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../release.keystore")
+            storePassword "opayclone2026"
+            keyAlias "opayclone"
+            keyPassword "opayclone2026"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.airbnb.android:lottie:6.3.0'
+    implementation 'androidx.biometric:biometric:1.1.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+}

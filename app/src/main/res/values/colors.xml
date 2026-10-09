@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ======== OUR BRAND ======== -->
+    <color name="opay_mint">#1DCF9F</color>
+    <color name="opay_mint_dark">#17B98D</color>
+    <color name="opay_green">#00B876</color>
+    <color name="opay_dark_blue">#1A1148</color>
+    <color name="opay_white">#FFFFFF</color>
+    <color name="opay_black">#000000</color>
+    <color name="opay_text_primary">#1A1A1A</color>
+    <color name="opay_text_secondary">#666666</color>
+    <color name="opay_text_hint">#999999</color>
+    <color name="opay_divider">#E5E5E5</color>
+    <color name="opay_field_bg">#F5F5F5</color>
+    <color name="opay_banner_bg">#E2F5EB</color>
+
+    <!-- ======== REAL OPAY COLORS (copied) ======== -->
+    <color name="osdk_color_white">#FFFFFFFF</color>
+    <color name="osdk_color_black">#FF000000</color>
+    <color name="osdk_color_00B876">#FF00B876</color>
+    <color name="osdk_color_E2F5EB">#FFE2F5EB</color>
+    <color name="osdk_color_FFA101">#FFFFA101</color>
+    <color name="osdk_home_first_bg">#FFE6F7EF</color>
+    <color name="osdk_color_C1CBD1">#FFC1CBD1</color>
+    <color name="osdk_color_cdd8df">#FFCDD8DF</color>
+    <color name="osdk_guide_mask">#CC000000</color>
+    <color name="osdk_always_white">#FFFFFFFF</color>
+    <color name="osdk_always_black_65">#A6000000</color>
+    <color name="osdk_always_black_85">#D9000000</color>
+    <color name="osdk_always_black_45">#73000000</color>
+    <color name="osdk_color_black_80">#CC000000</color>
+    <color name="osdk_color_262626">#FF262626</color>
+    <color name="osdk_color_30414f">#FF30414F</color>
+    <color name="osdk_color_515f68">#FF515F68</color>
+    <color name="osdk_color_a6000000">#A6000000</color>
+    <color name="osdk_color_d9000000">#D9000000</color>
+
+    <color name="omain_white">#FFFFFFFF</color>
+    <color name="omain_black">#FF000000</color>
+    <color name="omain_00b876">#FF00B876</color>
+    <color name="omain_black_85">#D9000000</color>
+    <color name="omain_black_65">#A6000000</color>
+    <color name="omain_black_45">#73000000</color>
+    <color name="omain_black_15">#26000000</color>
+    <color name="omain_black_10">#1A000000</color>
+    <color name="omain_black_08">#14000000</color>
+    <color name="omain_black_05">#0D000000</color>
+    <color name="omain_29303a">#FF29303A</color>
+    <color name="omain_515f68">#FF515F68</color>
+    <color name="omain_8497a4">#FF8497A4</color>
+    <color name="omain_color_E2F5EB">#FFE2F5EB</color>
+    <color name="omain_white_90">#E6FFFFFF</color>
+    <color name="omain_white_60">#99FFFFFF</color>
+
+    <color name="mint">#FF1DCF9F</color>
+    <color name="black_65">#A6000000</color>
+    <color name="black_85">#D9000000</color>
+    <color name="black_45">#73000000</color>
+    <color name="black_15">#26000000</color>
+    <color name="black_10">#1A000000</color>
+    <color name="common_keyboard_f5">#FFF5F5F5</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="red_pink">#FFDC0C48</color>
+    <color name="color_f8f8fb">#FFF8F8FB</color>
+    <color name="ic_launcher_background">#FFFFFFFF</color>
+    <color name="color_material_button_selector">#FF00B876</color>
+    <color name="color_material_button_login_selector">#FF00B876</color>
+    <color name="content">#FFFFFFFF</color>
+    <color name="text_51">#FF515F68</color>
+    <color name="osdk_always_00B876">#00B876</color>
+</resources>

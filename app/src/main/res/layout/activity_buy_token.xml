@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4">
+
+    <!-- TOP BAR -->
+    <LinearLayout
+        android:id="@+id/btTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBtBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/opay_me_arrow_right"
+            android:rotation="180"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:text="Buy Token"
+            android:textColor="#0A0A0A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/pay_poppins_bold" />
+
+        <ImageView
+            android:id="@+id/btnBtMenu"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/chevron_right"
+            android:rotation="90"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/btTopBar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- NOTICE CARD -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_notice_red"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⚠"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Important Information"
+                        android:textColor="#D32F2F"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/pay_poppins_bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Ensure you buy your transaction token from the verified sellers below. Buying from any other place is at your own risk!"
+                    android:textColor="#5A1818"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="3dp"
+                    android:fontFamily="@font/pay_poppins_regular" />
+            </LinearLayout>
+
+            <!-- PRICING CARD -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_white_radius_10"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pricing"
+                    android:textColor="#0A0A0A"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/pay_poppins_bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#EEEEEE" />
+
+                <!-- Monthly -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Monthly"
+                        android:textColor="#0A0A0A"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/pay_poppins_medium" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="end">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₦30,000"
+                            android:textColor="#3BB776"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/pay_poppins_bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Max ₦1,000,000"
+                            android:textColor="#8497A4"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/pay_poppins_regular" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EEEEEE" />
+
+                <!-- 6 Months -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="6 Months"
+                        android:textColor="#0A0A0A"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/pay_poppins_medium" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="end">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₦180,000"
+                            android:textColor="#3BB776"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/pay_poppins_bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Max ₦10,000,000"
+                            android:textColor="#8497A4"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/pay_poppins_regular" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EEEEEE" />
+
+                <!-- Yearly -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Yearly"
+                        android:textColor="#0A0A0A"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/pay_poppins_medium" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="end">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₦360,000"
+                            android:textColor="#3BB776"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/pay_poppins_bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Max ₦100,000,000"
+                            android:textColor="#8497A4"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/pay_poppins_regular" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="NOTE: Token changes on the first day of every month."
+                    android:textColor="#8497A4"
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/pay_poppins_regular" />
+            </LinearLayout>
+
+            <!-- SELLERS CARD -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_white_radius_10"
+                android:paddingTop="14dp"
+                android:paddingBottom="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text="Verified Sellers"
+                    android:textColor="#0A0A0A"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/pay_poppins_bold" />
+
+                <!-- Seller 1 -->
+                <LinearLayout
+                    android:id="@+id/rowSellerTaiwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:background="?android:attr/selectableItemBackground">
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_avatar_circle">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/opay_me_avatar_male" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="WEBTOOLS"
+                            android:textColor="#0A0A0A"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/pay_poppins_bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Verified seller • tap to contact"
+                            android:textColor="#3BB776"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/pay_poppins_medium" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/chevron_right" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginStart="66dp" android:layout_marginEnd="14dp" android:background="#EEEEEE" />
+
+                <!-- Seller 2 -->
+                <LinearLayout
+                    android:id="@+id/rowSellerAsonex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="14dp"
+                    android:background="?android:attr/selectableItemBackground">
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_avatar_circle">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/opay_me_avatar_male" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PETER BINARY"
+                            android:textColor="#0A0A0A"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/pay_poppins_bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Verified seller • tap to contact"
+                            android:textColor="#3BB776"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/pay_poppins_medium" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/chevron_right" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- I'VE SENT PROOF BUTTON -->
+            <TextView
+                android:id="@+id/btnSentProof"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:background="@drawable/bg_next_enabled"
+                android:text="Top-up Balance"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:fontFamily="@font/pay_poppins_bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="POWERED BY WEB TOOLS®"
+                android:textColor="#8497A4"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/pay_poppins_bold" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- LOADING OVERLAY -->
+    <FrameLayout
+        android:id="@+id/btLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E6FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="#3BB776" />
+    </FrameLayout>
+
+    <!-- MENU OVERLAY -->
+    <FrameLayout
+        android:id="@+id/btMenuOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/btnBtCloseMenu"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/chevron_right"
+                android:rotation="90"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:gravity="center_vertical"
+                android:text="Buy Token"
+                android:textColor="#3BB776"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/pay_poppins_bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical"
+                android:text="About"
+                android:textColor="#C4CAD0"
+                android:textSize="15sp"
+                android:fontFamily="@font/pay_poppins_regular" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical"
+                android:text="Contact Us"
+                android:textColor="#C4CAD0"
+                android:textSize="15sp"
+                android:fontFamily="@font/pay_poppins_regular" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical"
+                android:text="How to Use"
+                android:textColor="#C4CAD0"
+                android:textSize="15sp"
+                android:fontFamily="@font/pay_poppins_regular" />
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

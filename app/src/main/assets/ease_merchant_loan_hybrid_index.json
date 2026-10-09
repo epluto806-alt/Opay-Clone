@@ -1,0 +1,22 @@
+[
+  {
+    "remoteUrl":"/assets/css/vendor-vant.css",
+    "path":"easemerchant/css/vendor-vant.css",
+    "mineType":"text/css"
+  },
+  {
+    "remoteUrl":"/assets/js/vendor-vant.js",
+    "path":"easemerchant/js/vendor-vant.js",
+    "mineType":"application/javascript"
+  },
+  {
+    "remoteUrl":"/assets/js/vendor-vue.js",
+    "path":"easemerchant/js/vendor-vue.js",
+    "mineType":"application/javascript"
+  },
+  {
+    "remoteUrl":"/assets/js/polyfills.js",
+    "path":"easemerchant/js/polyfills.js",
+    "mineType":"application/javascript"
+  }
+]

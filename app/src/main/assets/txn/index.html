@@ -1,0 +1,213 @@
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    OPAY
+  </title>
+  <link rel="stylesheet" href="css/transaction-history.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+</head>
+<body>
+  <div class="top">
+    <div class="top-flex">
+      <div id="btnBack" style="cursor:pointer;">
+        <i class="bi bi-chevron-left"></i>
+      </div>
+      
+      <div style="font-weight: bold; font-size: 13px;">
+        Transactions
+      </div>
+      
+      <div style="font-size: 12px; color: #3BB776;">
+        Download
+      </div>
+    </div>
+    
+    <div class="category-flex">
+      <div class="each-contain">
+        <div style="width: 20px;"></div>
+        <div>
+          All Categories 
+        </div>
+        
+        <div>
+          <i class="bi bi-caret-down-fill"></i>
+        </div>
+      </div>
+      
+      <div class="each-contain">
+        <div style="width: 20px;"></div>
+        <div>
+          All Status 
+        </div>
+        
+        <div>
+          <i class="bi bi-caret-down-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <img class="trans-img" src="images/trans-img.PNG">
+  </div>
+  
+  <section class="history-body">
+    <div class="flex-hist">
+      <div class="date-hist-picker">
+        <select id="selMonth" class="date-picker-select"></select>
+        <select id="selYear"  class="date-picker-select"></select>
+        <span class="caret">▾</span>
+      </div>
+
+      <div>
+        <button class="analysis-btn">
+          Analysis
+        </button>
+      </div>
+    </div>
+    
+    <div class="hist-flex2">
+      <div>
+        <span class="label">In</span> <span id="transIn"></span>
+      </div>
+      
+      <div>
+        <span class="label">Out</span> <span id="transOut"></span>
+      </div>
+    </div>
+    
+    <div class="transaction-history-cover" id="history">
+      <!--<div class="mini-flex">
+        <div class="mini-flex-left">
+          <div>
+            <img class="mini-img" src="img/up-arrow.PNG">
+          </div>
+          
+          <div>
+            <div class="mini-text">
+              Transfer to POS Transfer-OCH...
+            </div>
+            
+            <div class="mini-date">
+              Jun 3rd, 12:25:10 PM
+            </div>
+          </div>
+        </div>
+        
+        <div class="mini-amount-cover">
+          <div class="mini-trans-amount">
+            -₦<span>2,500.00</span>
+          </div>
+          
+          <div class="status">
+            Successful
+          </div>
+        </div>
+      </div>
+      
+      <div class="mini-flex">
+        <div class="mini-flex-left">
+          <div>
+            <img class="mini-img" src="img/trans-airtime.PNG">
+          </div>
+          
+          <div>
+            <div class="mini-text">
+              Airtime
+            </div>
+            
+            <div class="mini-date">
+              Jun 3rd, 12:25:10 PM
+            </div>
+          </div>
+        </div>
+        
+        <div class="mini-amount-cover">
+          <div class="mini-trans-amount">
+            -₦<span>2,500.00</span>
+          </div>
+          
+          <div class="status">
+            Successful
+          </div>
+        </div>
+      </div>
+      
+      <div class="mini-flex">
+        <div class="mini-flex-left">
+          <div>
+            <img class="mini-img" src="img/down-arrow.PNG">
+          </div>
+          
+          <div>
+            <div class="mini-text">
+              Transfer from POS Transfer-OCH...
+            </div>
+            
+            <div class="mini-date">
+              Jun 3rd, 12:25:10 PM
+            </div>
+          </div>
+        </div>
+        
+        <div class="mini-amount-cover">
+          <div class="mini-trans-amount">
+            -₦<span>2,500.00</span>
+          </div>
+          
+          <div class="status">
+            Successful
+          </div>
+        </div>
+      </div>
+      
+      <div class="mini-flex">
+        <div class="mini-flex-left">
+          <div>
+            <img class="mini-img" src="img/trans-data.PNG">
+          </div>
+          
+          <div>
+            <div class="mini-text">
+              Mobile Data
+            </div>
+            
+            <div class="mini-date">
+              Jun 3rd, 12:25:10 PM
+            </div>
+          </div>
+        </div>
+        
+        <div class="mini-amount-cover">
+          <div class="mini-trans-amount">
+            -₦<span>2,500.00</span>
+          </div>
+          
+          <div class="status">
+            Successful
+          </div>
+        </div>
+      </div>-->
+    </div>
+  </section>
+  
+  <script src="js/history.js"> </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var b = document.getElementById('btnBack');
+      if (!b) return;
+      b.addEventListener('click', function (e) {
+        e.preventDefault();
+        try {
+          if (window.Android && typeof window.Android.goBack === 'function') {
+            window.Android.goBack();
+            return;
+          }
+        } catch (err) {}
+        if (window.history && window.history.length > 1) { window.history.back(); }
+      });
+    });
+  </script>
+</body></html>

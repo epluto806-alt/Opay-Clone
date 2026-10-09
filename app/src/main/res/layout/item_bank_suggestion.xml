@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingStart="6dp"
+    android:paddingEnd="6dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:id="@+id/ivSuggestionLogo"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/bank_default_icon"
+        android:contentDescription="Bank logo" />
+
+    <TextView
+        android:id="@+id/tvSuggestionName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="14dp"
+        android:text="Bank name"
+        android:textColor="#0A0A0A"
+        android:textSize="15sp"
+        android:fontFamily="@font/pay_poppins_regular" />
+</LinearLayout>

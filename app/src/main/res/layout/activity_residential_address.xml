@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="Back"
+            android:padding="2dp"
+            app:tint="#1A1A1A" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Residential Address"
+            android:textColor="#1A1A1A"
+            android:textSize="26sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/bg_mint_info_pill"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="14dp"
+            android:text="Please provide your complete residential address"
+            android:textColor="#00A86B"
+            android:textSize="13sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            style="@style/AddressFieldLabel"
+            android:text="State" />
+
+        <LinearLayout
+            android:id="@+id/rowState"
+            style="@style/AddressPickerRow">
+
+            <TextView
+                android:id="@+id/tvState"
+                style="@style/AddressPickerText"
+                android:text="Select state" />
+
+            <ImageView
+                style="@style/AddressPickerChevron"
+                android:src="@drawable/chevron_right" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/AddressFieldLabel"
+            android:text="LGA" />
+
+        <LinearLayout
+            android:id="@+id/rowLga"
+            style="@style/AddressPickerRow">
+
+            <TextView
+                android:id="@+id/tvLga"
+                style="@style/AddressPickerText"
+                android:text="Select LGA" />
+
+            <ImageView
+                style="@style/AddressPickerChevron"
+                android:src="@drawable/chevron_right" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/AddressFieldLabel"
+            android:text="Area" />
+
+        <LinearLayout
+            android:id="@+id/rowArea"
+            style="@style/AddressPickerRow">
+
+            <TextView
+                android:id="@+id/tvArea"
+                style="@style/AddressPickerText"
+                android:text="Select area" />
+
+            <ImageView
+                style="@style/AddressPickerChevron"
+                android:src="@drawable/chevron_right" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/AddressFieldLabel"
+            android:text="Address" />
+
+        <LinearLayout
+            android:id="@+id/rowAddress"
+            style="@style/AddressPickerRow">
+
+            <EditText
+                android:id="@+id/etAddress"
+                style="@style/AddressPickerText"
+                android:hint="Including house number and street"
+                android:inputType="textPostalAddress"
+                android:background="@null"
+                android:imeOptions="actionDone" />
+
+            <ImageView
+                style="@style/AddressPickerChevron"
+                android:src="@drawable/chevron_right" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_next_pill"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            android:stateListAnimator="@null" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/osdk_ic_ndic_start"
+                android:contentDescription="CBN" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:text="Licensed by the CBN and insured by"
+                android:textColor="#2B2B2B"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-medium" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/osdk_ic_ndic_end"
+                android:contentDescription="NDIC" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

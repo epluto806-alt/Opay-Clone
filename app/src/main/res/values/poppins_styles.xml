@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="PoppinsRegular" parent="">
+        <item name="android:fontFamily">@font/pay_poppins_regular</item>
+    </style>
+    <style name="PoppinsMedium" parent="">
+        <item name="android:fontFamily">@font/pay_poppins_medium</item>
+    </style>
+    <style name="PoppinsBold" parent="">
+        <item name="android:fontFamily">@font/pay_poppins_bold</item>
+    </style>
+</resources>

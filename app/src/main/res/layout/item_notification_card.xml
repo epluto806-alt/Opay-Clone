@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="12dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_white_radius12"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <FrameLayout
+            android:layout_width="32dp"
+            android:layout_height="32dp">
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:src="@drawable/opay_logo" />
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="top|end"
+                android:background="@drawable/bg_red_dot_new" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/ivExtra"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/ic_money_bag"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvNotifTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:text="OWealth Interest Earned"
+            android:textColor="#0A0A0A"
+            android:textSize="16sp"
+            android:fontFamily="@font/pay_poppins_bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNotifBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text=""
+        android:textColor="#3A3A3A"
+        android:textSize="13sp"
+        android:lineSpacingExtra="3dp"
+        android:fontFamily="@font/pay_poppins_regular" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="14dp"
+        android:background="#EEEEEE" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvNotifTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Today 09:43"
+            android:textColor="#8497A4"
+            android:textSize="12sp"
+            android:fontFamily="@font/pay_poppins_regular" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View"
+            android:textColor="#00B876"
+            android:textSize="13sp"
+            android:fontFamily="@font/pay_poppins_medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text=""
+            android:textColor="#00B876"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

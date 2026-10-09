@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ImageLottieView">
+        <attr name="lottie_name" format="string" />
+        <attr name="lottie_autoPlay" format="boolean" />
+        <attr name="lottie_loop" format="boolean" />
+        <attr name="android:src" />
+        <attr name="android:tint" />
+    </declare-styleable>
+</resources>

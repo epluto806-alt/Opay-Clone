@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ONLY names not already defined in colors.xml -->
+    <color name="osdk_login_user_input_hint_selector">@color/opay_text_hint</color>
+    <color name="osdk_login_user_input_selector">@color/opay_mint</color>
+    <color name="osdk_color_96F4e1">#FF96F4E1</color>
+    <color name="osdk_color_ff7b01">#FFFF7B01</color>
+    <color name="osdk_white_circle">#FFFFFFFF</color>
+</resources>

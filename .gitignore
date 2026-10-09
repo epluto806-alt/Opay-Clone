@@ -1,0 +1,53 @@
+# --- Build outputs ---
+/app/build/
+/build/
+/app/release/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# --- Gradle ---
+.gradle/
+gradle/wrapper/gradle-wrapper.jar.tmp
+local.properties
+
+# --- IDE ---
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Secrets and signing ---
+release.keystore
+*.keystore
+*.jks
+keystore.properties
+*.p12
+*.pem
+*.key
+
+# --- Backups / scratch ---
+_backups_removed/
+_bk/
+*.bak
+*.tmp
+*.log
+
+# --- Nested archives ---
+*.zip
+*.tar.gz
+
+# --- App-level scratch ---
+app/release/
+app/src/main/assets/_old/
+app/src/main/res/_old/
+# --- Stray Gradle distribution (bundled, not source) ---
+/gradle-8.7/
+gradle-8.7/
+
+# --- Stray files at project root ---
+/me3.png
+*.png.tmp

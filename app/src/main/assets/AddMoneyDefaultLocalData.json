@@ -1,0 +1,57 @@
+{
+  "services": [
+    {
+      "id": 222,
+      "superscript": null,
+      "name": "Bank Transfer",
+      "description": "Add money via mobile or internet banking",
+      "action": "otravel://receive_money/entrance",
+      "labelId": "",
+      "service_id": 1,
+      "superscript_url": null,
+      "img_url": "https://www.opayweb.com/image/image/105d6ba194e274c767581a5af8643273.png",
+      "bg_color": "",
+      "des_color": ""
+    },
+    {
+      "id": 223,
+      "superscript": null,
+      "name": "Top-up with card/account",
+      "description": "Add money directly from your bank card or account",
+      "action": "otravel://add_money/entrance",
+      "labelId": "",
+      "service_id": 1,
+      "superscript_url": null,
+      "img_url": "https://www.opayweb.com/image/image/c15e4d23e21b1617ab08dcf4ed7049a2.png",
+      "bg_color": "",
+      "des_color": ""
+    },
+    {
+      "id": 224,
+      "superscript": null,
+      "name": "Cash Deposit",
+      "description": "Fund your account with nearby merchants",
+      "action": "https://opay.ng/cash-in",
+      "labelId": "",
+      "service_id": 1,
+      "superscript_url": null,
+      "img_url": "https://www.opayweb.com/image/image/f0b86e1bd185285836307a874f98fe6e.png",
+      "bg_color": "",
+      "des_color": ""
+    },
+    {
+      "id": 225,
+      "superscript": null,
+      "name": "Scan my QR Code",
+      "description": "Show QR code to any OPay user",
+      "action": "otravel://myqr/entrance",
+      "labelId": "",
+      "service_id": 1,
+      "superscript_url": null,
+      "img_url": "https://www.opayweb.com/image/image/707f637f7d8d19b48c0474bcabc1e198.png",
+      "bg_color": "",
+      "des_color": ""
+    }
+  ],
+  "banners": null
+}

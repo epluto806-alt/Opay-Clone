@@ -1,0 +1,12 @@
+[
+  {
+    "remoteUrl":"/npm/jsencrypt@3.3.1/jsencrypt@3.3.1.min.js",
+    "path":"js/jsencrypt@3.3.1/jsencrypt@3.3.1.min.js",
+    "mineType":"application/javascript"
+  },
+  {
+    "remoteUrl": "/npm/lottie-web@5.12.2/build/player/lottie.min.js",
+    "path": "js/lottie.min.js",
+    "mineType": "application/javascript"
+  }
+]

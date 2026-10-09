@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<team.opay.pay.android.views.OPaySwipeRefreshLayout android:id="@id/swipe_refresh" android:background="@color/omain_f8f8fb" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:orientation="vertical" android:id="@id/me_root" android:layout_width="match_parent" android:layout_height="match_parent">
+        <team.opay.pay.payment.betting.ParentViewPagerNestScrollView android:id="@id/me_scroll_view" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <FrameLayout android:id="@id/me_head_container" android:layout_width="0.0dp" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                <FrameLayout android:id="@id/me_banner_container" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginLeft="16.0dp" android:layout_marginTop="-29.0dp" android:layout_marginRight="16.0dp" android:layout_marginHorizontal="16.0dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/me_head_container" />
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/me_recyclerView" android:layout_width="0.0dp" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/me_banner_container" app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </team.opay.pay.payment.betting.ParentViewPagerNestScrollView>
+        <include android:id="@id/headerTop" layout="@layout/omain_fragment_me_v2_header_top" />
+    </FrameLayout>
+</team.opay.pay.android.views.OPaySwipeRefreshLayout>

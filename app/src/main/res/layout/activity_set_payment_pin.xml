@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4F4F4">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="start|center_vertical"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Set Safety PIN"
+            android:textColor="#0A0A0A"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/pay_poppins_bold" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Set Safety PIN"
+                android:textColor="#0A0A0A"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/pay_poppins_bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Must be different from your Password PIN"
+                android:textColor="#8A8A8A"
+                android:textSize="12sp"
+                android:fontFamily="@font/pay_poppins_regular" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Set Safety PIN"
+                android:textColor="#0A0A0A"
+                android:textSize="13sp"
+                android:fontFamily="@font/pay_poppins_medium" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <FrameLayout android:id="@+id/pin1_1" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:layout_marginEnd="10dp" android:background="@drawable/bg_input_outline"><ImageView android:id="@+id/dot1_1" android:layout_width="12dp" android:layout_height="12dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+                <FrameLayout android:id="@+id/pin1_2" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:layout_marginEnd="10dp" android:background="@drawable/bg_input_outline"><ImageView android:id="@+id/dot1_2" android:layout_width="12dp" android:layout_height="12dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+                <FrameLayout android:id="@+id/pin1_3" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:layout_marginEnd="10dp" android:background="@drawable/bg_input_outline"><ImageView android:id="@+id/dot1_3" android:layout_width="12dp" android:layout_height="12dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+                <FrameLayout android:id="@+id/pin1_4" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:background="@drawable/bg_input_outline"><ImageView android:id="@+id/dot1_4" android:layout_width="12dp" android:layout_height="12dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Confirm Safety PIN"
+                android:textColor="#0A0A0A"
+                android:textSize="13sp"
+                android:fontFamily="@font/pay_poppins_medium" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <FrameLayout android:id="@+id/pin2_1" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:layout_marginEnd="10dp" android:background="@drawable/bg_input_outline"><ImageView android:id="@+id/dot2_1" android:layout_width="12dp" android:layout_height="12dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+                <FrameLayout android:id="@+id/pin2_2" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:layout_marginEnd="10dp" android:background="@drawable/bg_input_outline"><ImageView android:id="@+id/dot2_2" android:layout_width="12dp" android:layout_height="12dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+                <FrameLayout android:id="@+id/pin2_3" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:layout_marginEnd="10dp" android:background="@drawable/bg_input_outline"><ImageView android:id="@+id/dot2_3" android:layout_width="12dp" android:layout_height="12dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+                <FrameLayout android:id="@+id/pin2_4" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:background="@drawable/bg_input_outline"><ImageView android:id="@+id/dot2_4" android:layout_width="12dp" android:layout_height="12dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvForgotPin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Forgot Payment PIN?"
+                android:textColor="#00B876"
+                android:textSize="13sp"
+                android:fontFamily="@font/pay_poppins_medium" />
+
+            <TextView
+                android:id="@+id/btnConfirmPin"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_green_pill"
+                android:alpha="0.4"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="Confirm"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/pay_poppins_bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_pin_white"
+                    app:tint="#00B876"
+                    xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="OPay Secure Numeric Keypad"
+                    android:textColor="#8A8A8A"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/pay_poppins_regular" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="8dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:orientation="horizontal">
+            <TextView android:id="@+id/key1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="1" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_medium" />
+            <TextView android:id="@+id/key2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="2" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_medium" />
+            <TextView android:id="@+id/key3" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="3" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_medium" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:orientation="horizontal">
+            <TextView android:id="@+id/key4" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="4" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_medium" />
+            <TextView android:id="@+id/key5" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="5" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_medium" />
+            <TextView android:id="@+id/key6" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="6" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_medium" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:orientation="horizontal">
+            <TextView android:id="@+id/key7" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="7" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_medium" />
+            <TextView android:id="@+id/key8" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="8" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_medium" />
+            <TextView android:id="@+id/key9" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="9" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_medium" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:orientation="horizontal">
+            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" />
+            <TextView android:id="@+id/key0" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="0" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_medium" />
+            <TextView android:id="@+id/keyDel" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="⌫" android:textSize="22sp" android:textColor="#0A0A0A" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

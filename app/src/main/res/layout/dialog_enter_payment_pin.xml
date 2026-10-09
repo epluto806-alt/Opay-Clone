@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_white_top_radius"
+    android:paddingBottom="12dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:id="@+id/btnClosePin"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="start|center_vertical"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="Close" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Enter Payment PIN"
+            android:textColor="#0A0A0A"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/pay_poppins_bold" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <FrameLayout android:id="@+id/pin_1" android:layout_width="52dp" android:layout_height="52dp" android:layout_marginEnd="10dp" android:background="@drawable/bg_pin_box_focus"><ImageView android:id="@+id/dot_1" android:layout_width="10dp" android:layout_height="10dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+        <FrameLayout android:id="@+id/pin_2" android:layout_width="52dp" android:layout_height="52dp" android:layout_marginEnd="10dp" android:background="@drawable/bg_pin_box_idle"><ImageView android:id="@+id/dot_2" android:layout_width="10dp" android:layout_height="10dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+        <FrameLayout android:id="@+id/pin_3" android:layout_width="52dp" android:layout_height="52dp" android:layout_marginEnd="10dp" android:background="@drawable/bg_pin_box_idle"><ImageView android:id="@+id/dot_3" android:layout_width="10dp" android:layout_height="10dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+        <FrameLayout android:id="@+id/pin_4" android:layout_width="52dp" android:layout_height="52dp" android:background="@drawable/bg_pin_box_idle"><ImageView android:id="@+id/dot_4" android:layout_width="10dp" android:layout_height="10dp" android:layout_gravity="center" android:src="@drawable/pin_dot" android:visibility="invisible" /></FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvForgotPinDlg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Forgot Payment PIN?"
+        android:textColor="#00B876"
+        android:textSize="13sp"
+        android:fontFamily="@font/pay_poppins_medium" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/me_new_secure"
+            android:contentDescription="Secure" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="OPay Secure Numeric Keypad"
+            android:textColor="#8A8A8A"
+            android:textSize="11sp"
+            android:fontFamily="@font/pay_poppins_regular" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="#F0F0F0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal">
+            <TextView android:id="@+id/dkey1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="1" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_regular" />
+            <TextView android:id="@+id/dkey2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="2" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_regular" />
+            <TextView android:id="@+id/dkey3" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="3" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_regular" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal">
+            <TextView android:id="@+id/dkey4" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="4" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_regular" />
+            <TextView android:id="@+id/dkey5" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="5" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_regular" />
+            <TextView android:id="@+id/dkey6" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="6" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_regular" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal">
+            <TextView android:id="@+id/dkey7" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="7" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_regular" />
+            <TextView android:id="@+id/dkey8" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="8" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_regular" />
+            <TextView android:id="@+id/dkey9" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="9" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_regular" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal">
+            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" />
+            <TextView android:id="@+id/dkey0" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="0" android:textSize="22sp" android:textColor="#0A0A0A" android:fontFamily="@font/pay_poppins_regular" />
+            <TextView android:id="@+id/dkeyDel" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="⌫" android:textSize="22sp" android:textColor="#0A0A0A" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

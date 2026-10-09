@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "remoteUrl": "/npm/lib-flexible@0.3.2/flexible.min.js",
+      "path": "js/flexible.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vue@2.6.11/dist/vue.min.js",
+      "path": "js/vue.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vue-router@3.3.4/dist/vue-router.min.js",
+      "path": "js/vue-router.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vuex@3.5.1/dist/vuex.min.js",
+      "path": "js/vuex.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vant@2.12.22/lib/vant.min.js",
+      "path": "js/vant.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/axios@0.19.2/dist/axios.min.js",
+      "path": "js/axios.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/echarts@4.9.0/dist/echarts.min.js",
+      "path": "js/echarts.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/dateformat@3.0.3/lib/dateformat.js",
+      "path": "js/dateformat.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/crypto-js@3.3.0/crypto-js.min.js",
+      "path": "js/crypto-js.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vconsole@3.8.1/dist/vconsole.min.js",
+      "path": "js/vconsole.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/maps/api/js?key=AIzaSyAKMpTI_RfaP99cz-b1LsExOYMCHB2N2-c&libraries=places&language=en-us",
+      "path": "js/googlemaps.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vant@2.12.22/lib/index-rem.css",
+      "path": "css/vant-rem.css",
+      "mineType": "text/css"
+    },
+    {
+      "remoteUrl": "/npm/animate-css@3.7.2/animate-rem.min.css",
+      "path": "css/animate-rem.min.css",
+      "mineType": "text/css"
+    },
+    {
+      "remoteUrl": "/npm/vue-googlemaps@0.1.2/dist/vue-googlemaps.min.js",
+      "path": "js/vue-googlemaps.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vue-googlemaps@0.1.2/dist/vue-googlemaps.css",
+      "path": "css/vue-googlemaps.css",
+      "mineType": "text/css"
+    },
+    {
+      "remoteUrl": "/npm/vue-googlemaps@0.1.2/dist/vue-googlemaps.umd.js",
+      "path": "vue-googlemaps.umd.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vue-router@3.6.5/dist/vue-router.min.js",
+      "path": "js/vue-router@3.6.5/dist/vue-router.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vue@2.7.14/dist/vue.min.js",
+      "path": "js/vue@2.7.14/dist/vue.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vuex@3.6.2/dist/vuex.min.js",
+      "path": "js/vuex@3.6.2/dist/vuex.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/jsencrypt@2.3.1/jsencrypt.min.js",
+      "path": "js/jsencrypt.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/art-template@4.13.2/lib/template-web.js",
+      "path": "js/template-web.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "npm/swiper@5.3.8/css/swiper.min.css",
+      "path": "css/swiper.min.css",
+      "mineType": "text/css"
+    },
+    {
+      "remoteUrl": "npm/swiper@5.3.8/js/swiper.min.js",
+      "path": "js/swiper.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/html2canvas@1.4.1/dist/html2canvas.min.js",
+      "path": "js/html2canvas.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/dayjs@1.11.13/dayjs.min.js",
+      "path": "js/dayjs.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/lottie-web@5.12.2/build/player/lottie.min.js",
+      "path": "js/lottie.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/@opayjs/utils@1.3.5/lib/index.umd.js",
+      "path": "js/index.umd.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vue@3.3.10/dist/vue.global.min.js",
+      "path": "js/vue@3.3.10/dist/vue.global.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vue-router@4.2.5/dist/vue-router.global.min.js",
+      "path": "js/vue-router@4.2.5/dist/vue-router.global.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/pinia@3.0.4/dist/pinia.iife.prod.js",
+      "path": "js/pinia@3.0.4/dist/pinia.iife.prod.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vant@4.8.0/lib/vant.min.js",
+      "path": "js/vant@4.8.0/lib/vant.min.js",
+      "mineType": "application/javascript"
+    },
+    {
+      "remoteUrl": "/npm/vant@4.8.0/lib/index.rem.css",
+      "path": "css/vant@4.8.0/lib/index.rem.css",
+      "mineType": "text/css"
+    },
+    {
+      "remoteUrl": "/npm/vant@4.8.0/lib/index.min.css",
+      "path": "css/vant@4.8.0/lib/index.min.css",
+      "mineType": "text/css"
+    }
+  ]
+}

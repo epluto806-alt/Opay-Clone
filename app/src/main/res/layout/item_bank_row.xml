@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <FrameLayout
+        android:id="@+id/logoContainer"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/bg_bank_default_circle">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/tvInitials"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:includeFontPadding="false" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvBankName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="14dp"
+        android:text="Bank Name"
+        android:textColor="#0A0A0A"
+        android:textSize="14sp"
+        android:fontFamily="@font/pay_poppins_regular"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+</LinearLayout>

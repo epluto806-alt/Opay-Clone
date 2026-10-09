@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/meBottomNav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="90dp">
+
+            <!-- TOP SECTION -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_me_top_section"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp">
+
+                <!-- Row 1: avatar + name + tier + settings -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/ivMeAvatar"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/opay_me_avatar_male"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitCenter" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvMeName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hi,"
+                            android:textColor="#0A0A0A"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/pay_poppins_bold" />
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/me_new_tier"
+                            android:scaleType="fitStart" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnMeSettings"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:src="@drawable/me_new_settings"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+
+                <!-- Row 2: Total Balance label + eye -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Balance"
+                        android:textColor="#0A0A0A"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/pay_poppins_regular" />
+
+                    <ImageView
+                        android:id="@+id/btnMeEye"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="7dp"
+                        android:src="@drawable/opay_me_eye_show"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+
+                <!-- Row 3: balance + shield -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvMeBalanceMasked"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#0A0A0A"
+                            android:textSize="23sp"
+                            android:textStyle="bold"
+                            android:includeFontPadding="false"
+                            android:visibility="gone"
+                            android:fontFamily="@font/pay_poppins_bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.00"
+                            android:textColor="#0A0A0A"
+                            android:textSize="23sp"
+                            android:textStyle="bold"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/pay_poppins_bold" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/me_new_shield"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+
+                <!-- Safety banner  overlaps into the section below -->
+
+                <!-- Interest Credited pill -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_interest_pill"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Interest Credited Today +₦0.09"
+                        android:textColor="#3BB776"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/pay_poppins_medium"
+                        android:includeFontPadding="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_me_safety_banner"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+
+                    <FrameLayout
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_circle_white">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_safety_warning"
+                            android:scaleType="fitCenter" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10 Safety Tips"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/pay_poppins_bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="Make your account more secure."
+                            android:textColor="#E5FFF5"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/pay_poppins_regular" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/btnSafetyView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="@drawable/bg_white_pill"
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp"
+                        android:gravity="center"
+                        android:text="View"
+                        android:textColor="#12B886"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/pay_poppins_bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ACTION SECTION 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_white_radius_10"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp">
+
+                <LinearLayout android:id="@+id/rowTxnHistory" style="@style/MeRow">
+                      <ImageView style="@style/MeRowIcon1" android:src="@drawable/me_new_txn" />
+                    <TextView style="@style/MeRowTitle" android:text="Transaction History" />
+                    <ImageView style="@style/MeRowChevron" android:src="@drawable/chevron_right" />
+                </LinearLayout>
+                <View style="@style/MeRowDivider" />
+
+                <LinearLayout android:id="@+id/rowAccountLimits" style="@style/MeRow">
+                    <ImageView style="@style/MeRowIcon2" android:src="@drawable/me_new_limits" />
+                    <LinearLayout style="@style/MeRowTextCol">
+                        <TextView style="@style/MeRowTitleInner" android:text="Account Limits" />
+                        <TextView style="@style/MeRowSubtitle" android:text="View your transaction limits" />
+                    </LinearLayout>
+                    <ImageView style="@style/MeRowChevron" android:src="@drawable/chevron_right" />
+                </LinearLayout>
+                <View style="@style/MeRowDivider" />
+
+                <LinearLayout style="@style/MeRow">
+                    <ImageView style="@style/MeRowIcon2" android:src="@drawable/me_new_card" />
+                    <LinearLayout style="@style/MeRowTextCol">
+                        <TextView style="@style/MeRowTitleInner" android:text="Bank Card/Account" />
+                        <TextView style="@style/MeRowSubtitle" android:text="Add payment option" />
+                    </LinearLayout>
+                    <ImageView style="@style/MeRowChevron" android:src="@drawable/chevron_right" />
+                </LinearLayout>
+                <View style="@style/MeRowDivider" />
+
+                <LinearLayout style="@style/MeRow">
+                    <ImageView style="@style/MeRowIcon2" android:src="@drawable/me_new_mart" />
+                    <LinearLayout style="@style/MeRowTextCol">
+                        <TextView style="@style/MeRowTitleInner" android:text="My BizPayment" />
+                        <TextView style="@style/MeRowSubtitle" android:text="Receive payment for business" />
+                    </LinearLayout>
+                    <ImageView style="@style/MeRowChevron" android:src="@drawable/chevron_right" />
+                </LinearLayout>
+                <View style="@style/MeRowDivider" />
+
+                <LinearLayout style="@style/MeRow">
+                    <ImageView style="@style/MeRowIcon2" android:src="@drawable/me_new_ojunior" />
+                    <LinearLayout style="@style/MeRowTextCol">
+                        <TextView style="@style/MeRowTitleInner" android:text="O Junior" />
+                        <TextView style="@style/MeRowSubtitle" android:text="Create an account for your child/ward" />
+                    </LinearLayout>
+                    <ImageView style="@style/MeRowChevron" android:src="@drawable/chevron_right" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ACTION SECTION 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_white_radius_10"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp">
+
+                <LinearLayout android:id="@+id/tileSecurityCenter" style="@style/MeRow">
+                    <ImageView style="@style/MeRowIcon2" android:src="@drawable/me_new_secure" />
+                    <LinearLayout style="@style/MeRowTextCol">
+                        <TextView style="@style/MeRowTitleInner" android:text="Security Center" />
+                        <TextView style="@style/MeRowSubtitle" android:text="Protect your funds" />
+                    </LinearLayout>
+                    <ImageView style="@style/MeRowChevron" android:src="@drawable/chevron_right" />
+                </LinearLayout>
+                <View style="@style/MeRowDivider" />
+
+                <LinearLayout android:id="@+id/tileCustomerService" style="@style/MeRow">
+                    <ImageView style="@style/MeRowIcon2" android:src="@drawable/me_new_call" />
+                    <TextView style="@style/MeRowTitle" android:text="Customer Service Center" />
+                    <ImageView style="@style/MeRowChevron" android:src="@drawable/chevron_right" />
+                </LinearLayout>
+                <View style="@style/MeRowDivider" />
+
+                <LinearLayout style="@style/MeRow">
+                    <ImageView style="@style/MeRowIcon2" android:src="@drawable/me_new_invite" />
+                    <LinearLayout style="@style/MeRowTextCol">
+                        <TextView style="@style/MeRowTitleInner" android:text="Invitation" />
+                        <TextView style="@style/MeRowSubtitle" android:text="Invite friends and earn up to 5,600 Bonus" />
+                    </LinearLayout>
+                    <ImageView style="@style/MeRowChevron" android:src="@drawable/chevron_right" />
+                </LinearLayout>
+                <View style="@style/MeRowDivider" />
+
+                <LinearLayout android:id="@+id/tileOpayUssd" style="@style/MeRow">
+                    <ImageView style="@style/MeRowIcon2" android:src="@drawable/me_new_ussd" />
+                    <TextView style="@style/MeRowTitle" android:text="Opay USSD" />
+                    <ImageView style="@style/MeRowChevron" android:src="@drawable/chevron_right" />
+                </LinearLayout>
+                <View style="@style/MeRowDivider" />
+
+                <LinearLayout style="@style/MeRow">
+                    <ImageView style="@style/MeRowIcon2" android:src="@drawable/me_new_star" />
+                    <TextView style="@style/MeRowTitle" android:text="Rate Us" />
+                    <ImageView style="@style/MeRowChevron" android:src="@drawable/chevron_right" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- LICENCE IMAGE -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/me_new_licence" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAV -->
+    <LinearLayout
+        android:id="@+id/meBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:background="@drawable/bg_bottom_nav_pill"
+        android:elevation="6dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/tabMeHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/me_new_dash" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Home"
+                android:textColor="#8497A4"
+                android:textSize="8sp"
+                android:fontFamily="@font/pay_poppins_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/me_new_reward" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Rewards"
+                android:textColor="#8497A4"
+                android:textSize="8sp"
+                android:fontFamily="@font/pay_poppins_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/me_new_finance" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Finance"
+                android:textColor="#8497A4"
+                android:textSize="8sp"
+                android:fontFamily="@font/pay_poppins_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/me_new_cc" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Cards"
+                android:textColor="#8497A4"
+                android:textSize="8sp"
+                android:fontFamily="@font/pay_poppins_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/bg_nav_active_pill">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/me_new_me" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Me"
+                android:textColor="#3BB776"
+                android:textSize="8sp"
+                android:fontFamily="@font/pay_poppins_medium" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+

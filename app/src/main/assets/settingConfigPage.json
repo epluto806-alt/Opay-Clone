@@ -1,0 +1,156 @@
+{
+    "serviceModuleList": [{
+        "module": {
+            "id": 127,
+            "name": "First",
+            "code": "Settings First",
+            "uiType": 1,
+            "serviceTotalSize": 0,
+            "serviceMinrankSize": 0,
+            "rank": 9
+        },
+        "data": [{
+            "id": 2221,
+            "refundGuaranteeService": false,
+            "name": "Payment Settings",
+            "action": "otravel://home/entrance",
+            "rank": 8,
+            "adCrowdRuleId": 0,
+            "createTime": "2025-09-04T07:19:53",
+            "enabled": 1,
+            "service_code": "payment_setting",
+            "service_id": 1,
+            "img_url": "https://files.opayweb.com/file/marketing/20250904120515799/ic_reset_pay_pin.png"
+        }, {
+            "id": 2222,
+            "refundGuaranteeService": false,
+            "name": "Login Settings",
+            "action": "otravel://home/entrance",
+            "rank": 7,
+            "adCrowdRuleId": 0,
+            "createTime": "2025-09-04T07:20:08",
+            "enabled": 1,
+            "service_code": "login_setting",
+            "service_id": 1,
+            "img_url": "https://files.opayweb.com/file/marketing/20250904120436783/ic_reset_pin.png"
+        }, {
+            "id": 2223,
+            "refundGuaranteeService": false,
+            "name": "Saving Settings",
+            "action": "otravel://home/entrance",
+            "rank": 6,
+            "adCrowdRuleId": 0,
+            "createTime": "2025-09-04T07:20:24",
+            "enabled": 1,
+            "service_code": "saving_setting",
+            "service_id": 1,
+            "img_url": "https://files.opayweb.com/file/marketing/20250904120300338/ic_settings_savings.png"
+        }]
+    }, {
+        "module": {
+            "id": 128,
+            "name": "Second",
+            "code": "Settings Second",
+            "uiType": 1,
+            "serviceTotalSize": 0,
+            "serviceMinrankSize": 0,
+            "rank": 8
+        },
+        "data": [{
+            "id": 2224,
+            "refundGuaranteeService": false,
+            "name": "Homepage Settings",
+            "action": "otravel://home/entrance",
+            "rank": 9,
+            "adCrowdRuleId": 0,
+            "createTime": "2025-09-04T07:20:42",
+            "enabled": 1,
+            "service_code": "home_setting",
+            "service_id": 1,
+            "img_url": "https://files.opayweb.com/file/marketing/20250904120237654/ic_homepage_setting.png"
+        }, {
+            "id": 2225,
+            "refundGuaranteeService": false,
+            "name": "Security Questions",
+            "action": "otravel://home/entrance",
+            "rank": 8,
+            "adCrowdRuleId": 0,
+            "createTime": "2025-09-04T07:20:59",
+            "enabled": 1,
+            "service_code": "security_question",
+            "service_id": 1,
+            "img_url": "https://files.opayweb.com/file/marketing/20250904120219869/ic_security.png"
+        }, {
+            "id": 2226,
+            "refundGuaranteeService": false,
+            "name": "SMS Alert Settings",
+            "action": "otravel://home/entrance",
+            "rank": 7,
+            "adCrowdRuleId": 0,
+            "createTime": "2025-09-04T07:21:21",
+            "enabled": 1,
+            "service_code": "sms_subscription",
+            "service_id": 1,
+            "img_url": "https://files.opayweb.com/file/marketing/20250904120111900/ic_sms_subscribe.png"
+        }, {
+            "id": 2228,
+            "refundGuaranteeService": false,
+            "name": "Access to Clipboard",
+            "action": "otravel://home/entrance",
+            "rank": 5,
+            "adCrowdRuleId": 0,
+            "createTime": "2025-09-04T07:21:57",
+            "enabled": 1,
+            "service_code": "clipBoard",
+            "service_id": 1,
+            "img_url": "https://files.opayweb.com/file/marketing/20250904115546732/access_clipboard.png"
+        }, {
+            "id": 2229,
+            "refundGuaranteeService": false,
+            "name": "Themes",
+            "action": "otravel://home/entrance",
+            "rank": 4,
+            "adCrowdRuleId": 0,
+            "createTime": "2025-09-04T07:22:18",
+            "enabled": 1,
+            "service_code": "theme_setting",
+            "service_id": 1,
+            "img_url": "https://files.opayweb.com/file/marketing/20250904115521222/osdk_ic_settings_themes.png"
+        }]
+    }, {
+        "module": {
+            "id": 129,
+            "name": "Third",
+            "code": "Settings Third",
+            "uiType": 1,
+            "serviceTotalSize": 0,
+            "serviceMinrankSize": 0,
+            "rank": 7
+        },
+        "data": [{
+            "id": 2230,
+            "refundGuaranteeService": false,
+            "name": "Security Center",
+            "action": "otravel://home/entrance",
+            "rank": 9,
+            "adCrowdRuleId": 0,
+            "createTime": "2025-09-04T07:22:32",
+            "enabled": 1,
+            "service_code": "security_center",
+            "service_id": 1,
+            "diverse_img_url": "https://files.opayweb.com/file/marketing/20250904115016577/osdk_ic_settings_security_center.png"
+        }, {
+            "id": 2231,
+            "refundGuaranteeService": false,
+            "name": "Feedback and Suggestions",
+            "action": "otravel://home/entrance",
+            "rank": 8,
+            "adCrowdRuleId": 0,
+            "createTime": "2025-09-04T07:22:53",
+            "enabled": 1,
+            "service_code": "feedBack",
+            "service_id": 1,
+            "img_url": "https://files.opayweb.com/file/marketing/20250904115501506/osdk_ic_setting_feedback.png"
+        }]
+    }]
+}

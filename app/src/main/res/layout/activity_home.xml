@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout    xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    android:layout_width="match_parent"    android:layout_height="match_parent"    android:background="#F4F4F4">
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout        android:id="@+id/homeRefresh"        android:layout_width="match_parent"        android:layout_height="0dp"        app:layout_constraintTop_toTopOf="parent"        app:layout_constraintBottom_toTopOf="@id/bottomNav">
+
+<ScrollView            android:id="@+id/scrollHome"            android:layout_width="match_parent"            android:layout_height="match_parent"            android:fillViewport="true"            android:scrollbars="none">
+
+<LinearLayout            android:layout_width="match_parent"            android:layout_height="wrap_content"            android:orientation="vertical"            android:paddingStart="10dp"            android:paddingEnd="10dp"            android:paddingTop="10dp"            android:paddingBottom="30dp">
+
+<!-- TOP BAR -->
+<LinearLayout                android:layout_width="match_parent"                android:layout_height="wrap_content"                android:orientation="horizontal"                android:gravity="center_vertical"                android:paddingTop="4dp"                android:paddingBottom="4dp">
+
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+
+<ImageView android:id="@+id/ivAvatar" android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/bank_opay_round" android:scaleType="fitCenter" />
+
+<ImageView android:layout_width="14dp" android:layout_height="14dp" android:layout_marginStart="-2dp" android:src="@drawable/home_tier" android:scaleType="fitCenter" />
+
+</LinearLayout>
+<TextView                    android:id="@+id/tvGreeting"                    android:layout_width="0dp"                    android:layout_height="wrap_content"                    android:layout_weight="1"                    android:layout_marginStart="10dp"                            android:text="Hi,"                    android:textColor="#0A0A0A"                    android:textSize="13sp"                    android:maxLines="1"                    android:ellipsize="end"                    android:fontFamily="@font/pay_poppins_regular" />
+
+<ImageView                    android:id="@+id/btnSupport"                    android:layout_width="26dp"                    android:layout_height="26dp"                    android:layout_marginEnd="10dp"                    android:src="@drawable/home_help"                    android:scaleType="fitCenter" />
+
+<ImageView                    android:id="@+id/btnScan"                    android:layout_width="20dp"                    android:layout_height="20dp"                    android:layout_marginEnd="10dp"                    android:src="@drawable/home_qr"                    android:scaleType="fitCenter" />
+
+<FrameLayout                    android:layout_width="wrap_content"                    android:layout_height="wrap_content">
+
+<ImageView                        android:id="@+id/btnBell"                        android:layout_width="22dp"                        android:layout_height="22dp"                        android:src="@drawable/opay_bell"                        android:scaleType="fitCenter" />
+
+<TextView                        android:id="@+id/tvBellBadge"                        android:layout_width="wrap_content"                        android:layout_height="wrap_content"                        android:layout_gravity="top|end"                        android:layout_marginTop="-4dp"                        android:layout_marginEnd="-6dp"                        android:background="@drawable/bg_badge_red_circle"                        android:gravity="center"                        android:minWidth="14dp"                        android:minHeight="14dp"                        android:paddingStart="3dp"                        android:paddingEnd="3dp"                        android:includeFontPadding="false"                            android:text="99"                        android:textColor="#FFFFFF"                        android:textSize="7sp"                        android:textStyle="bold" />
+
+</FrameLayout>
+</LinearLayout>
+<!-- BALANCE CARD -->
+<LinearLayout                android:id="@+id/cardBalance"                android:layout_width="match_parent"                android:layout_height="wrap_content"                android:layout_marginTop="10dp"                android:orientation="vertical"                android:background="@drawable/bg_balance_green_10"                android:padding="10dp">
+
+<LinearLayout                    android:layout_width="match_parent"                    android:layout_height="wrap_content"                    android:orientation="horizontal"                    android:gravity="center_vertical">
+
+<ImageView                        android:layout_width="16dp"                        android:layout_height="16dp"                        android:src="@drawable/home_shield"                        android:scaleType="fitCenter" />
+
+<TextView                        android:layout_width="wrap_content"                        android:layout_height="wrap_content"                        android:layout_marginStart="6dp"                            android:text="Available Balance"                        android:textColor="#FFFFFF"                        android:textSize="11sp"                        android:fontFamily="@font/pay_poppins_regular" />
+
+<ImageView                        android:id="@+id/btnEye"                        android:layout_width="14dp"                        android:layout_height="14dp"                        android:layout_marginStart="6dp"                        android:src="@drawable/opay_me_eye_show"                        android:tint="#FFFFFF"                        android:scaleType="fitCenter" />
+
+<View                        android:layout_width="0dp"                        android:layout_height="1dp"                        android:layout_weight="1" />
+
+<TextView                        android:id="@+id/tvTxnHistory"                        android:layout_width="wrap_content"                        android:layout_height="wrap_content"                            android:text="Transaction history "                        android:textColor="#FFFFFF"                        android:textSize="10sp"                        android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout                    android:layout_width="match_parent"                    android:layout_height="wrap_content"                    android:layout_marginTop="10dp"                    android:orientation="horizontal"                    android:gravity="center_vertical">
+
+<LinearLayout                        android:layout_width="0dp"                        android:layout_height="wrap_content"                        android:layout_weight="1"                        android:orientation="vertical">
+
+<TextView                            android:id="@+id/tvBalanceMasked"                            android:layout_width="wrap_content"                            android:layout_height="wrap_content"                            android:text="+&#8358;0.09"                            android:textColor="#FFFFFF"                            android:textSize="17sp"                            android:textStyle="bold"                            android:includeFontPadding="false"                            android:visibility="gone"                            android:fontFamily="@font/pay_poppins_bold" />
+
+<TextView                            android:id="@+id/tvBalance"                            android:layout_width="wrap_content"                            android:layout_height="wrap_content"                            android:text="TEST 0.00"                            android:textColor="#FFFFFF"                            android:textSize="17sp"                            android:textStyle="bold"                            android:includeFontPadding="false"                            android:fontFamily="@font/pay_poppins_bold" />
+
+</LinearLayout>
+<TextView                        android:id="@+id/tvAddMoney"                        android:layout_width="wrap_content"                        android:layout_height="28dp"                        android:paddingStart="16dp"                        android:paddingEnd="16dp"                        android:gravity="center"                        android:background="@drawable/bg_addmoney_pill"                            android:text="+ Add Money"                        android:textColor="#3BB776"                        android:textSize="11sp"                        android:fontFamily="@font/pay_poppins_bold" />
+
+</LinearLayout>
+</LinearLayout>
+<!-- MINI TRANSACTIONS -->
+<!-- MINI TRANSACTIONS -->
+<!-- RECENT TRANSACTIONS (2 stacked rows) -->
+<LinearLayout                android:id="@+id/llRecentTxns"                android:layout_width="match_parent"                android:layout_height="wrap_content"                android:layout_marginTop="10dp"                android:orientation="vertical"                android:background="@drawable/bg_white_radius_10"                android:paddingTop="4dp"                android:paddingBottom="4dp"                android:paddingStart="12dp"                android:paddingEnd="12dp" />
+<!-- ACTIONS ROW -->
+<LinearLayout                android:layout_width="match_parent"                android:layout_height="wrap_content"                android:layout_marginTop="10dp"                android:orientation="horizontal"                android:background="@drawable/bg_white_radius_10"                android:paddingTop="14dp"                android:paddingBottom="14dp"                android:weightSum="3">
+
+<LinearLayout                    android:id="@+id/tileToOpay"                    android:layout_width="0dp"                    android:layout_height="wrap_content"                    android:layout_weight="1"                    android:orientation="vertical"                    android:gravity="center">
+
+<ImageView                        android:layout_width="45dp"                        android:layout_height="45dp"                        android:src="@drawable/home_toopay"                        android:scaleType="fitCenter" />
+
+<TextView                        android:layout_width="wrap_content"                        android:layout_height="wrap_content"                        android:layout_marginTop="6dp"                            android:text="To OPay"                        android:textColor="#0A0A0A"                        android:textSize="11sp"                        android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout                    android:id="@+id/tileToBank"                    android:layout_width="0dp"                    android:layout_height="wrap_content"                    android:layout_weight="1"                    android:orientation="vertical"                    android:gravity="center">
+
+<ImageView                        android:layout_width="45dp"                        android:layout_height="45dp"                        android:src="@drawable/home_tobank"                        android:scaleType="fitCenter" />
+
+<TextView                        android:layout_width="wrap_content"                        android:layout_height="wrap_content"                        android:layout_marginTop="6dp"                            android:text="To Bank"                        android:textColor="#0A0A0A"                        android:textSize="11sp"                        android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout                    android:id="@+id/tileWithdraw"                    android:layout_width="0dp"                    android:layout_height="wrap_content"                    android:layout_weight="1"                    android:orientation="vertical"                    android:gravity="center">
+
+<ImageView                        android:layout_width="45dp"                        android:layout_height="45dp"                        android:src="@drawable/home_withdraw"                        android:scaleType="fitCenter" />
+
+<TextView                        android:layout_width="wrap_content"                        android:layout_height="wrap_content"                        android:layout_marginTop="6dp"                            android:text="Withdraw"                        android:textColor="#0A0A0A"                        android:textSize="11sp"                        android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+</LinearLayout>
+<!-- TAKE CONTROL BANNER -->
+<ImageView                android:layout_width="match_parent"                android:layout_height="72dp"                android:layout_marginTop="10dp"                android:scaleType="centerCrop"                android:adjustViewBounds="false"                android:clipToOutline="true"                android:background="@drawable/bg_white_radius_10"                android:src="@drawable/opay_email_illustration" />
+
+<!-- QUICK ACCESS -->
+<LinearLayout                android:layout_width="match_parent"                android:layout_height="wrap_content"                android:layout_marginTop="10dp"                android:orientation="vertical"                android:background="@drawable/bg_white_radius_10"                android:paddingTop="14dp"                android:paddingBottom="14dp">
+
+<LinearLayout                    android:layout_width="match_parent"                    android:layout_height="wrap_content"                    android:orientation="horizontal"                    android:weightSum="4">
+
+<LinearLayout                        android:id="@+id/tileAirtime" android:clickable="false" android:focusable="false"                        android:layout_width="0dp"                        android:layout_height="wrap_content"                        android:layout_weight="1"                        android:orientation="vertical"                        android:gravity="center">
+
+<FrameLayout                            android:layout_width="wrap_content"                            android:layout_height="wrap_content">
+
+<ImageView                                android:layout_width="45dp"                                android:layout_height="45dp"                                android:src="@drawable/home_airtime"                                android:scaleType="fitCenter" />
+
+<TextView                                android:layout_width="wrap_content"                                android:layout_height="wrap_content"                                android:layout_gravity="top|end"                                android:layout_marginTop="-2dp"                                android:layout_marginEnd="-8dp"                                android:background="@drawable/bg_badge_upto6"                                android:paddingStart="4dp"                                android:paddingEnd="4dp"                                android:paddingTop="1dp"                                android:paddingBottom="1dp"                            android:text="Up to 6%"                                android:textColor="#FFFFFF"                                android:textSize="6sp"                                android:includeFontPadding="false" />
+
+</FrameLayout>
+<TextView                            android:layout_width="wrap_content"                            android:layout_height="wrap_content"                            android:layout_marginTop="6dp"                            android:text="Airtime"                            android:textColor="#0A0A0A"                            android:textSize="11sp"                            android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout                        android:id="@+id/tileData" android:clickable="false" android:focusable="false"                        android:layout_width="0dp"                        android:layout_height="wrap_content"                        android:layout_weight="1"                        android:orientation="vertical"                        android:gravity="center">
+
+<ImageView                            android:layout_width="45dp"                            android:layout_height="45dp"                            android:src="@drawable/home_data"                            android:scaleType="fitCenter" />
+
+<TextView                            android:layout_width="wrap_content"                            android:layout_height="wrap_content"                            android:layout_marginTop="6dp"                            android:text="Data"                            android:textColor="#0A0A0A"                            android:textSize="11sp"                            android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout                        android:layout_width="0dp"                        android:layout_height="wrap_content"                        android:layout_weight="1"                        android:orientation="vertical"                        android:gravity="center">
+
+<ImageView                            android:layout_width="45dp"                            android:layout_height="45dp"                            android:src="@drawable/home_betting"                            android:scaleType="fitCenter" />
+
+<TextView                            android:layout_width="wrap_content"                            android:layout_height="wrap_content"                            android:layout_marginTop="6dp"                            android:text="Betting"                            android:textColor="#0A0A0A"                            android:textSize="11sp"                            android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout                        android:layout_width="0dp"                        android:layout_height="wrap_content"                        android:layout_weight="1"                        android:orientation="vertical"                        android:gravity="center">
+
+<ImageView                            android:layout_width="45dp"                            android:layout_height="45dp"                            android:src="@drawable/home_tv"                            android:scaleType="fitCenter" />
+
+<TextView                            android:layout_width="wrap_content"                            android:layout_height="wrap_content"                            android:layout_marginTop="6dp"                            android:text="TV"                            android:textColor="#0A0A0A"                            android:textSize="11sp"                            android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+</LinearLayout>
+<LinearLayout                    android:layout_width="match_parent"                    android:layout_height="wrap_content"                    android:layout_marginTop="14dp"                    android:orientation="horizontal"                    android:weightSum="4">
+
+<LinearLayout                        android:layout_width="0dp"                        android:layout_height="wrap_content"                        android:layout_weight="1"                        android:orientation="vertical"                        android:gravity="center">
+
+<ImageView                            android:layout_width="45dp"                            android:layout_height="45dp"                            android:src="@drawable/home_safebox"                            android:scaleType="fitCenter" />
+
+<TextView                            android:layout_width="wrap_content"                            android:layout_height="wrap_content"                            android:layout_marginTop="6dp"                            android:text="SafeBox"                            android:textColor="#0A0A0A"                            android:textSize="11sp"                            android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout                        android:layout_width="0dp"                        android:layout_height="wrap_content"                        android:layout_weight="1"                        android:orientation="vertical"                        android:gravity="center">
+
+<ImageView                            android:layout_width="45dp"                            android:layout_height="45dp"                            android:src="@drawable/home_loan"                            android:scaleType="fitCenter" />
+
+<TextView                            android:layout_width="wrap_content"                            android:layout_height="wrap_content"                            android:layout_marginTop="6dp"                            android:text="Loan"                            android:textColor="#0A0A0A"                            android:textSize="11sp"                            android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout                        android:layout_width="0dp"                        android:layout_height="wrap_content"                        android:layout_weight="1"                        android:orientation="vertical"                        android:gravity="center">
+
+<ImageView                            android:layout_width="45dp"                            android:layout_height="45dp"                            android:src="@drawable/home_bizmart"                            android:scaleType="fitCenter" />
+
+<TextView                            android:layout_width="wrap_content"                            android:layout_height="wrap_content"                            android:layout_marginTop="6dp"                            android:text="BizPayment"                            android:textColor="#0A0A0A"                            android:textSize="11sp"                            android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout                        android:layout_width="0dp"                        android:layout_height="wrap_content"                        android:layout_weight="1"                        android:orientation="vertical"                        android:gravity="center">
+
+<ImageView                            android:layout_width="45dp"                            android:layout_height="45dp"                            android:src="@drawable/home_more"                            android:scaleType="fitCenter" />
+
+<TextView                            android:layout_width="wrap_content"                            android:layout_height="wrap_content"                            android:layout_marginTop="6dp"                            android:text="More"                            android:textColor="#0A0A0A"                            android:textSize="11sp"                            android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+</LinearLayout>
+</LinearLayout>
+<!-- BLOG BANNER -->
+<LinearLayout                android:layout_width="match_parent"                android:layout_height="wrap_content"                android:layout_marginTop="10dp"                android:orientation="horizontal"                android:gravity="center_vertical"                android:background="@drawable/bg_white_radius_10"                android:padding="10dp">
+
+<ImageView                    android:layout_width="40dp"                    android:layout_height="40dp"                    android:src="@drawable/home_blog"                    android:scaleType="fitCenter" />
+
+<LinearLayout                    android:layout_width="0dp"                    android:layout_height="wrap_content"                    android:layout_weight="1"                    android:layout_marginStart="10dp"                    android:orientation="vertical">
+
+<TextView                        android:layout_width="wrap_content"                        android:layout_height="wrap_content"                            android:text="World Cup Season Is Back!"                        android:textColor="#0A0A0A"                        android:textSize="12sp"                        android:textStyle="bold"                        android:fontFamily="@font/pay_poppins_bold" />
+
+<TextView                        android:layout_width="wrap_content"                        android:layout_height="wrap_content"                        android:layout_marginTop="2dp"                            android:text="Stay Updated with World Cup Actions on EasyWin."                        android:textColor="#6E6E6E"                        android:textSize="11sp"                        android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+</LinearLayout>
+<!-- SAVINGS VOUCHERS + HOT DEAL SLIDER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_white_radius_10">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vpVoucherHotDeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp"
+                    android:layout_marginTop="0dp" />
+
+                <LinearLayout
+                    android:id="@+id/dotsVoucherHotDeal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal" />
+            </LinearLayout>
+            <!-- COMPLETE TASKS SLIDER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/bg_white_radius_10"
+                android:orientation="vertical">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vpTasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="185dp" />
+
+                <LinearLayout
+                    android:id="@+id/dotsTasks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal" />
+            </LinearLayout>
+</LinearLayout>
+</ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+<!-- FLOATING CLICK-SECURE BADGE -->
+<ImageView        android:id="@+id/ivClickSecure"                android:layout_width="120dp"                android:layout_height="120dp"                android:layout_marginBottom="90dp"                android:layout_marginEnd="-60dp"        android:src="@drawable/home_clicksecure"        android:scaleType="fitCenter"        app:layout_constraintBottom_toBottomOf="parent"        app:layout_constraintEnd_toEndOf="parent" />
+
+<!-- BOTTOM NAV -->
+<LinearLayout        android:id="@+id/bottomNav"        android:layout_width="match_parent"        android:layout_height="56dp"        android:layout_marginStart="10dp"        android:layout_marginEnd="10dp"        android:layout_marginBottom="8dp"        android:orientation="horizontal"        android:weightSum="5"        android:background="@drawable/bg_bottom_nav_pill"        android:elevation="6dp"        android:gravity="center_vertical"        app:layout_constraintBottom_toBottomOf="parent">
+
+<LinearLayout            android:id="@+id/tabHome"            android:layout_width="0dp"            android:layout_height="match_parent"            android:layout_weight="1"            android:orientation="horizontal"            android:gravity="center"            android:background="@drawable/bg_nav_active_pill">
+
+<ImageView                android:id="@+id/tabHomeIcon"                android:layout_width="18dp"                android:layout_height="18dp"                android:src="@drawable/home_nav_home" />
+
+<TextView                android:id="@+id/tabHomeLabel"                android:layout_width="wrap_content"                android:layout_height="wrap_content"                android:layout_marginStart="4dp"                            android:text="Home"                android:textColor="#3BB776"                android:textSize="8sp"                android:fontFamily="@font/pay_poppins_medium" />
+
+</LinearLayout>
+<LinearLayout            android:layout_width="0dp"            android:layout_height="match_parent"            android:layout_weight="1"            android:orientation="vertical"            android:gravity="center">
+
+<ImageView                android:layout_width="20dp"                android:layout_height="20dp"                android:src="@drawable/home_nav_reward" />
+
+<TextView                android:layout_width="wrap_content"                android:layout_height="wrap_content"                android:layout_marginTop="2dp"                            android:text="Rewards"                android:textColor="#8497A4"                android:textSize="8sp"                android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout            android:layout_width="0dp"            android:layout_height="match_parent"            android:layout_weight="1"            android:orientation="vertical"            android:gravity="center">
+
+<ImageView                android:layout_width="20dp"                android:layout_height="20dp"                android:src="@drawable/home_nav_finance" />
+
+<TextView                android:layout_width="wrap_content"                android:layout_height="wrap_content"                android:layout_marginTop="2dp"                            android:text="Finance"                android:textColor="#8497A4"                android:textSize="8sp"                android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout            android:layout_width="0dp"            android:layout_height="match_parent"            android:layout_weight="1"            android:orientation="vertical"            android:gravity="center">
+
+<ImageView                android:layout_width="20dp"                android:layout_height="20dp"                android:src="@drawable/home_nav_cc" />
+
+<TextView                android:layout_width="wrap_content"                android:layout_height="wrap_content"                android:layout_marginTop="2dp"                            android:text="Cards"                android:textColor="#8497A4"                android:textSize="8sp"                android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+<LinearLayout            android:id="@+id/tabMe"            android:layout_width="0dp"            android:layout_height="match_parent"            android:layout_weight="1"            android:orientation="vertical"            android:gravity="center">
+
+<ImageView                android:layout_width="20dp"                android:layout_height="20dp"                android:src="@drawable/home_nav_me" />
+
+<TextView                android:layout_width="wrap_content"                android:layout_height="wrap_content"                android:layout_marginTop="2dp"                            android:text="Me"                android:textColor="#8497A4"                android:textSize="8sp"                android:fontFamily="@font/pay_poppins_regular" />
+
+</LinearLayout>
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="14dp"
+    android:paddingEnd="14dp">
+
+    <TextView
+        android:id="@+id/tvSlideHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Claim ₦690 Savings Vouchers"
+        android:textColor="#0A0A0A"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/pay_poppins_bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="14dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/ivSlideIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/opay_banner_voucher"
+            android:scaleType="fitCenter" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSlideTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Savings Vouchers"
+                android:textColor="#0A0A0A"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/pay_poppins_bold" />
+
+            <TextView
+                android:id="@+id/tvSlideSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Use on deposits &amp; earn more!"
+                android:textColor="#6E6E6E"
+                android:textSize="11sp"
+                android:fontFamily="@font/pay_poppins_regular" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

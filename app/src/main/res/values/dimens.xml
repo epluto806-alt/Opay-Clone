@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Real OPay dimens used on home + auth screens -->
+    <dimen name="_8dp">8dp</dimen>
+    <dimen name="_16dp">16dp</dimen>
+    <dimen name="_20dp">20dp</dimen>
+    <dimen name="_12dp">12dp</dimen>
+    <dimen name="_24dp">24dp</dimen>
+    <dimen name="_15dp">15dp</dimen>
+    <dimen name="_30dp">30dp</dimen>
+    <dimen name="_16sp">16sp</dimen>
+    <dimen name="biz_button_corner_24">24dp</dimen>
+    <dimen name="biz_button_margin_24">24dp</dimen>
+    <dimen name="biz_button_margin_40">40dp</dimen>
+    <dimen name="card_elevation_receipt">2dp</dimen>
+    <dimen name="content_padding">16dp</dimen>
+    <dimen name="content_padding_small">8dp</dimen>
+    <dimen name="content_padding_smaller">4dp</dimen>
+    <dimen name="content_padding_minimum">2dp</dimen>
+    <dimen name="content_padding_large">48dp</dimen>
+    <dimen name="content_splash_skip_with">68dp</dimen>
+    <dimen name="margin_24_dp">24dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="standard_field_height">44dp</dimen>
+</resources>

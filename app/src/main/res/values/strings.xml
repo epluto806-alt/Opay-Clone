@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OPay</string>
+    <string name="skip">skip</string>
+    <string name="create_account">Create a new account</string>
+    <string name="login">Login</string>
+    <string name="banner_airtime">Get 300 airtime for free</string>
+
+    <!-- Onboarding page 1 -->
+    <string name="ob1_title">We are Beyond Banking</string>
+    <string name="ob1_desc">OPay is a one-stop mobile-based platform for payment, transportation, food &amp; grocery and other important services in your everyday life.</string>
+    <!-- Page 2 -->
+    <string name="ob2_title">Instant &amp; Free Transfers</string>
+    <string name="ob2_desc">Enjoy OPay to OPay transfer &amp; unlimited FREE transfer to other banks every Friday</string>
+    <!-- Page 3 -->
+    <string name="ob3_title">Airtime/Data Top-up with Cashback</string>
+    <string name="ob3_desc">Get instant cashbacks on Data/Airtime recharge</string>
+    <!-- Page 4 -->
+    <string name="ob4_title">OWealth - Balance with Interest</string>
+    <string name="ob4_desc">OWealth: Use as balance with amazing daily interest</string>
+    <!-- Page 5 -->
+    <string name="ob5_title">Reliable Debit Card</string>
+    <string name="ob5_desc">Zero ATM withdrawals &amp; maintenance fee\nAccepted at any POS, ATM &amp; online channels</string>
+    <!-- Page 6 -->
+    <string name="ob6_title">24/7 Quick Customer Service</string>
+    <string name="ob6_desc">Quick online &amp; offline channels for complaints resolution</string>
+
+    <!-- Signup -->
+    <string name="signup_title">Get an OPay Account</string>
+    <string name="signup_phone_hint">Enter your Mobile No.</string>
+    <string name="signup_invite">Have an Invitation Code? (Optional)</string>
+    <string name="signup_next">NEXT</string>
+    <string name="signup_agree">I have read, understood and agreed to the Terms &amp; Conditions and Privacy Policy.</string>
+    <string name="signup_have_account">Already have an OPay Account? </string>
+    <string name="signup_login_link">Log in</string>
+
+    <!-- Login -->
+    <string name="login_title">Log in to your account</string>
+    <string name="login_field_hint">Enter your Mobile No./Email</string>
+    <string name="login_lost">Lost Your Mobile Number, </string>
+    <string name="login_lost_link">Change Now</string>
+    <string name="login_next">NEXT</string>
+    <string name="login_no_account">Don\'t have an OPay Account yet?\n</string>
+    <string name="login_create_link">Click here to get one</string>
+    <string name="help">Help</string>
+    <string name="licensed_cbn_insured_ndic">Licensed by the CBN and insured by</string>
+    <string name="slide_header_vouchers">Claim ₦690 Savings Vouchers</string>
+    <string name="slide_title_vouchers">Savings Vouchers</string>
+    <string name="slide_subtitle_vouchers">Use on deposits &amp; earn more!</string>
+    <string name="slide_header_hotdeal">Hot Deal Just for You!</string>
+    <string name="slide_title_hotdeal">Hot Deal</string>
+    <string name="slide_subtitle_hotdeal">Deposit ₦600, Get ₦40 Off Instantly!</string>
+</resources>

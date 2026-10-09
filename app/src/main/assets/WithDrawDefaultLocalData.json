@@ -1,0 +1,31 @@
+{
+  "services": [
+    {
+      "id": 239,
+      "superscript": null,
+      "name": "Transfer to merchants",
+      "description": "Send money to an OPay Merchant's wallet and get cash equivalent",
+      "action": "otravel://cashout/qrcode",
+      "labelId": "",
+      "service_id": 1,
+      "superscript_url": null,
+      "img_url": "https://www.opayweb.com/image/image/ba27daa7aa651c958a8566495c9fccfe.png",
+      "bg_color": "",
+      "des_color": ""
+    },
+    {
+      "id": 241,
+      "superscript": null,
+      "name": "Withdraw with OPay Card",
+      "description": "Withdraw from any ATM or POS around you.",
+      "action": "https://opay.ng/opay-card",
+      "labelId": "",
+      "service_id": 1,
+      "superscript_url": null,
+      "img_url": "https://www.opayweb.com/image/image/ea36955d038de22fbc4d86d1d9058eec.png",
+      "bg_color": "",
+      "des_color": ""
+    }
+  ],
+  "banners": null
+}

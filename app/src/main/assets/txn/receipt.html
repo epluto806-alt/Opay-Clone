@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #000; }
+        .bank-logo-img {
+            width: 44px; height: 44px; border-radius: 50%;
+            object-fit: contain; background: #F5F6F7; padding: 3px;
+            display: block;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center min-h-screen m-0 p-0">
+
+    <div class="w-full h-screen sm:h-[844px] sm:max-w-[390px] bg-[#F3F4F6] flex flex-col justify-between overflow-hidden relative sm:rounded-[40px] sm:shadow-2xl">
+
+        <div class="flex items-center justify-between px-4 py-3 bg-[#F3F4F6] shrink-0">
+            <button id="btnBack" class="text-gray-800 text-base p-1" style="background:transparent;border:none;cursor:pointer;">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <h1 class="text-gray-900 font-medium text-base">Transaction Details</h1>
+            <button class="text-[#00B074] text-xl flex items-center justify-center p-1 focus:outline-none">
+                <i class="fa-solid fa-headset text-lg"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 px-3.5 pb-4 overflow-y-auto space-y-3.5">
+
+            <div class="bg-white rounded-2xl p-5 shadow-sm flex flex-col items-center text-center">
+
+                <img id="bankLogo" class="bank-logo-img mb-3" src="" alt="bank logo"
+                     onerror="this.style.display='none'" />
+
+                <p id="txnTitle" class="text-gray-900 font-bold text-[13px] mb-2">
+                    Transfer to <span id="recipientName"></span>
+                </p>
+
+                <h2 id="txnAmount" class="text-[34px] font-black text-gray-900 mb-1 leading-none">
+                    &#8358;1,000.00
+                </h2>
+
+                <p class="text-[#00B074] font-semibold text-sm mb-5">Successful</p>
+
+                <div class="w-full mb-5 px-1">
+                    <div class="flex items-start justify-between relative">
+                        <div class="absolute top-[9px] left-[22%] w-[28%] h-[2px] bg-[#00B074] z-0"></div>
+                        <div class="absolute top-[9px] right-[22%] w-[28%] h-[2px] bg-[#00B074] z-0"></div>
+
+                        <div class="flex flex-col items-center flex-1 relative z-10">
+                            <div class="w-[18px] h-[18px] rounded-full bg-[#00B074] flex items-center justify-center">
+                                <i class="fa-solid fa-check text-white text-[9px]"></i>
+                            </div>
+                            <p class="text-[11px] font-medium text-gray-800 mt-2 text-center leading-tight">
+                                Payment<br>successful
+                            </p>
+                            <p id="time1" class="text-[10px] text-gray-400 mt-0.5">10-07 09:33:12</p>
+                        </div>
+
+                        <div class="flex flex-col items-center flex-1 relative z-10">
+                            <div class="w-[18px] h-[18px] rounded-full bg-[#00B074] flex items-center justify-center">
+                                <i class="fa-solid fa-check text-white text-[9px]"></i>
+                            </div>
+                            <p class="text-[11px] font-medium text-gray-800 mt-2 text-center leading-tight">
+                                Processing<br>by bank
+                            </p>
+                            <p id="time2" class="text-[10px] text-gray-400 mt-0.5">10-07 09:33:12</p>
+                        </div>
+
+                        <div class="flex flex-col items-center flex-1 relative z-10">
+                            <div class="w-[18px] h-[18px] rounded-full bg-[#00B074] flex items-center justify-center">
+                                <i class="fa-solid fa-check text-white text-[9px]"></i>
+                            </div>
+                            <p class="text-[11px] font-medium text-gray-800 mt-2 text-center leading-tight">
+                                Received<br>by bank
+                            </p>
+                            <p id="time3" class="text-[10px] text-gray-400 mt-0.5">10-07 09:33:47</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full bg-[#F5F6F7] rounded-xl px-3.5 py-2.5 text-left">
+                    <p class="text-[11px] text-gray-400 leading-relaxed">
+                        The recipient account is expected to be credited within 5 minutes, subject to notification by the bank.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-4 shadow-sm">
+                <h3 class="text-gray-900 font-bold text-[13px] mb-4">Transaction Details</h3>
+
+                <div class="space-y-3.5 text-[12px]">
+                    <div class="flex justify-between items-start">
+                        <span class="text-gray-400">Recipient Details</span>
+                        <div class="text-right font-medium text-gray-900 leading-snug">
+                            <p id="recipientDetailName"></p>
+                            <p id="recipientDetailName2"></p>
+                            <p id="recipientBankAccount" class="text-gray-400 font-normal mt-0.5"></p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-400">Transaction No.</span>
+                        <div class="flex items-center gap-1.5 font-medium">
+                            <span id="txnNo">261007020100989897468566</span>
+                            <i class="fa-regular fa-clone text-gray-400 text-[11px]"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-400">Payment Method</span>
+                        <div class="flex items-center gap-1 font-medium">
+                            <span>OWealth</span>
+                            <i class="fa-solid fa-chevron-right text-[10px] text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-400">Transaction Date</span>
+                        <span id="txnDate" class="font-medium">Oct 7th, 2026 09:33:12</span>
+                    </div>
+
+                    <div class="flex justify-between items-start">
+                        <span class="text-gray-400">Session ID</span>
+                        <div class="flex items-start gap-1.5 font-medium text-right max-w-[200px]">
+                            <span id="sessionId" class="break-all leading-snug">100004261007083327173519448808</span>
+                            <i class="fa-regular fa-clone text-gray-400 text-[11px] mt-0.5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-4 shadow-sm">
+                <h3 class="text-gray-900 font-bold text-[13px] mb-4">More Actions</h3>
+
+                <div class="space-y-4 text-[12px]">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <span class="text-gray-400">Category</span>
+                        <div class="flex items-center gap-1 font-medium text-gray-900">
+                            <span>Transfer</span>
+                            <i class="fa-solid fa-chevron-right text-[10px] text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-dashed border-gray-200"></div>
+
+                    <div class="flex items-center gap-2 cursor-pointer text-[#00B074] font-semibold">
+                        <span class="w-4 h-4 rounded-full border border-[#00B074] flex items-center justify-center text-[9px]">
+                            <i class="fa-solid fa-arrow-right-arrow-left text-[8px]"></i>
+                        </span>
+                        <span>Transfer Again</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bg-white px-4 py-3.5 border-t border-gray-100 flex gap-3 shrink-0">
+            <button class="flex-1 bg-[#E8F5E9] text-[#00B074] font-semibold py-3.5 rounded-full text-[13px]">
+                Report Issue
+            </button>
+            <button id="btnShareReceipt" class="flex-1 bg-[#00B074] text-white font-semibold py-3.5 rounded-full text-[13px]">
+                Share Receipt
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        function stableDigits(seed, length) {
+            let h = 0x811c9dc5 >>> 0;
+            const s = String(seed);
+            for (let i = 0; i < s.length; i++) {
+                h ^= s.charCodeAt(i);
+                h = Math.imul(h, 0x01000193) >>> 0;
+            }
+            let out = '';
+            for (let i = 0; i < length; i++) {
+                h ^= (h << 13); h >>>= 0;
+                h ^= (h >>> 17);
+                h ^= (h << 5);  h >>>= 0;
+                out += (h % 10).toString();
+            }
+            return out;
+        }
+
+        window.renderTransaction = function (data) {
+            data = data || {};
+
+            // Accept BOTH key sets — Kotlin may send recipientFull/First/Second
+            // or recipientName/recipientName2. Handle both, no stale defaults.
+            var fullName = data.recipientFull || data.recipientName || '';
+            var firstName = data.recipientFirst || fullName;
+            var secondName = data.recipientSecond || data.recipientName2 || '';
+
+            // If only the full name is present, split on first space.
+            if (!data.recipientFirst && !data.recipientSecond && fullName) {
+                var parts = fullName.split(' ');
+                firstName = parts[0] || fullName;
+                secondName = parts.slice(1).join(' ') || '';
+            }
+
+            if (fullName) {
+                document.getElementById('recipientName').textContent = fullName;
+            }
+            if (firstName) {
+                document.getElementById('recipientDetailName').textContent = firstName;
+            }
+            if (secondName) {
+                document.getElementById('recipientDetailName2').textContent = secondName;
+            }
+            if (data.bankName || data.bankAccount) {
+                const bn = (data.bankName || '').toUpperCase();
+                const ba = data.bankAccount || '';
+                document.getElementById('recipientBankAccount').textContent = bn + (ba ? ' | ' + ba : '');
+            } else {
+                // clear if no data — do not leave a stale default
+                document.getElementById('recipientBankAccount').textContent = '';
+            }
+            if (data.bankLogo) {
+                const img = document.getElementById('bankLogo');
+                img.src = data.bankLogo;
+                img.style.display = 'block';
+            }
+            if (data.amount) {
+                document.getElementById('txnAmount').textContent = data.amount;
+            }
+            if (data.date) {
+                document.getElementById('txnDate').textContent = data.date;
+                document.getElementById('time1').textContent = data.shortTime || data.date;
+                document.getElementById('time2').textContent = data.shortTime || data.date;
+            }
+            if (data.shortTime3) {
+                document.getElementById('time3').textContent = data.shortTime3;
+            }
+
+            const seed = data.seed || 'fallback-seed-0001';
+            document.getElementById('txnNo').textContent     = stableDigits(seed + '-txn',    24);
+            document.getElementById('sessionId').textContent = stableDigits(seed + '-session', 30);
+        };
+
+        window.renderTransaction({});
+
+        // ---- Back button -> native finish() ----
+        (function () {
+            var backBtn = document.getElementById('btnBack');
+            if (!backBtn) return;
+            backBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                try {
+                    if (window.AndroidBridge && typeof window.AndroidBridge.goBack === 'function') {
+                        window.AndroidBridge.goBack();
+                        return;
+                    }
+                } catch (err) { /* fall through */ }
+                // Fallback for browser context
+                if (window.history && window.history.length > 1) {
+                    window.history.back();
+                }
+            });
+        })();
+
+        // ---- Share Receipt -> native ShareReceiptActivity ----
+        (function () {
+            var shareBtn = document.getElementById('btnShareReceipt');
+            if (!shareBtn) return;
+            shareBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                try {
+                    if (window.AndroidBridge && typeof window.AndroidBridge.openShare === 'function') {
+                        window.AndroidBridge.openShare();
+                        return;
+                    }
+                } catch (err) { /* fall through */ }
+            });
+        })();
+    </script>
+
+</body>
+</html>

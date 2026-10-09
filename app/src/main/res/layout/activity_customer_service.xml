@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8FB">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header with mint bg + real agent image -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#D0FEEE">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="24dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:id="@+id/btnBack"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_back_arrow" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="12dp"
+                                android:text="Customer Service Center"
+                                android:textColor="#0A0A0A"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/pay_poppins_bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#0A0A0A"
+                                android:textSize="22sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginStart="0dp"
+                            android:text="7*24h service for you"
+                            android:textColor="#3A3A3A"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/pay_poppins_regular" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/opay_cs_agent" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Service grid card  2 rows of 4, HORIZONTAL tiles -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_white_radius12"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+                    <LinearLayout style="@style/CSGridCell">
+                        <ImageView style="@style/CSGridIcon" android:src="@drawable/ic_cs_dispute" />
+                        <TextView style="@style/CSGridLabel" android:text="Transaction Dispute" />
+                    </LinearLayout>
+                    <LinearLayout style="@style/CSGridCell">
+                        <ImageView style="@style/CSGridIcon" android:src="@drawable/ic_cs_err" />
+                        <TextView style="@style/CSGridLabel" android:text="Erroneous Transfer" />
+                    </LinearLayout>
+                    <LinearLayout style="@style/CSGridCell">
+                        <ImageView style="@style/CSGridIcon" android:src="@drawable/ic_cs_limits" />
+                        <TextView style="@style/CSGridLabel" android:text="Account Limits" />
+                    </LinearLayout>
+                    <LinearLayout style="@style/CSGridCell">
+                        <ImageView style="@style/CSGridIcon" android:src="@drawable/ic_cs_pin" />
+                        <TextView style="@style/CSGridLabel" android:text="Password &amp; PIN" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+                    <LinearLayout style="@style/CSGridCell">
+                        <ImageView style="@style/CSGridIcon" android:src="@drawable/ic_cs_phone" />
+                        <TextView style="@style/CSGridLabel" android:text="Phone NO. Change" />
+                    </LinearLayout>
+                    <LinearLayout style="@style/CSGridCell">
+                        <ImageView style="@style/CSGridIcon" android:src="@drawable/ic_cs_scam" />
+                        <TextView style="@style/CSGridLabel" android:text="Report Scam" />
+                    </LinearLayout>
+                    <LinearLayout style="@style/CSGridCell">
+                        <ImageView style="@style/CSGridIcon" android:src="@drawable/ic_cs_sms" />
+                        <TextView style="@style/CSGridLabel" android:text="SMS Alert Settings" />
+                    </LinearLayout>
+                    <LinearLayout style="@style/CSGridCell">
+                        <ImageView style="@style/CSGridIcon" android:src="@drawable/ic_cs_more" />
+                        <TextView style="@style/CSGridLabel" android:text="More" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- My Feedback -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_white_radius12"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="My Feedback"
+                        android:textColor="#0A0A0A"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/pay_poppins_bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="More "
+                        android:textColor="#8497A4"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/pay_poppins_regular" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="6dp"
+                    android:background="#00B876" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_cs_feedback_empty"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:text="No records found in the past 90 days"
+                    android:textColor="#8497A4"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/pay_poppins_regular" />
+            </LinearLayout>
+
+            <!-- Help you may need  mint tinted section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="#E2F5EB"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Help you may need"
+                        android:textColor="#0A0A0A"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/pay_poppins_bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Change "
+                        android:textColor="#6A6A6A"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/pay_poppins_regular" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- White card with tabs + list -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_white_radius12_bottom"
+                android:paddingTop="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <TextView style="@style/CSHelpTab" android:text="Hot Issues" android:textColor="#0A0A0A" />
+                    <TextView style="@style/CSHelpTab" android:text="Transaction" />
+                    <TextView style="@style/CSHelpTab" android:text="Account" />
+                    <TextView style="@style/CSHelpTab" android:text="OWealth" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:background="#00B876" />
+
+                <LinearLayout style="@style/CSHelpItem">
+                    <TextView style="@style/CSHelpNum" android:text="1" />
+                    <TextView style="@style/CSHelpText" android:text="Office Address" />
+                    <TextView style="@style/CSHelpArrow" android:text="" />
+                </LinearLayout>
+                <View style="@style/CSHelpDivider" />
+
+                <LinearLayout style="@style/CSHelpItem">
+                    <TextView style="@style/CSHelpNum" android:text="2" />
+                    <TextView style="@style/CSHelpText" android:text="How to increase the limit?" />
+                    <TextView style="@style/CSHelpArrow" android:text="" />
+                </LinearLayout>
+                <View style="@style/CSHelpDivider" />
+
+                <LinearLayout style="@style/CSHelpItem">
+                    <TextView style="@style/CSHelpNum" android:text="3" />
+                    <TextView style="@style/CSHelpText" android:text="How to change mobile number?" />
+                    <TextView style="@style/CSHelpArrow" android:text="" />
+                </LinearLayout>
+                <View style="@style/CSHelpDivider" />
+
+                <LinearLayout style="@style/CSHelpItem">
+                    <TextView style="@style/CSHelpNum" android:text="4" />
+                    <TextView style="@style/CSHelpText" android:text="How to download account statement?" />
+                    <TextView style="@style/CSHelpArrow" android:text="" />
+                </LinearLayout>
+                <View style="@style/CSHelpDivider" />
+
+                <LinearLayout style="@style/CSHelpItem">
+                    <TextView style="@style/CSHelpNum" android:text="5" />
+                    <TextView style="@style/CSHelpText" android:text="What is Stamp Duty?" />
+                    <TextView style="@style/CSHelpArrow" android:text="" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Floating Live Chat -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/bg_green_pill"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Live Chat"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/pay_poppins_bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

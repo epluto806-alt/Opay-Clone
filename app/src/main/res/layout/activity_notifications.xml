@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8FB">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back_arrow" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="Notifications"
+            android:textColor="#0A0A0A"
+            android:textSize="18sp"
+            android:fontFamily="@font/pay_poppins_medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#0A0A0A"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/enableBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/opay_bell"
+            app:tint="#00B876" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:text="Enable notifications to get the latest from OPay"
+            android:textColor="#00B876"
+            android:textSize="13sp"
+            android:fontFamily="@font/pay_poppins_medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_green_pill"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:gravity="center"
+            android:text="Turn on"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:fontFamily="@font/pay_poppins_medium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tabRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@id/enableBar">
+
+        <TextView
+            android:id="@+id/tabTransactions"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_tab_selected"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:gravity="center"
+            android:text="Transactions"
+            android:textColor="#00B876"
+            android:textSize="13sp"
+            android:fontFamily="@font/pay_poppins_bold" />
+
+        <TextView
+            android:id="@+id/tabServices"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_tab_unselected"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:gravity="center"
+            android:text="Services"
+            android:textColor="#6A6A6A"
+            android:textSize="13sp"
+            android:fontFamily="@font/pay_poppins_medium" />
+
+        <TextView
+            android:id="@+id/tabActivities"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_tab_unselected"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:gravity="center"
+            android:text="Activities"
+            android:textColor="#6A6A6A"
+            android:textSize="13sp"
+            android:fontFamily="@font/pay_poppins_medium" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tabRow"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ScrollView
+            android:id="@+id/scrollNotifications"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/notifList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="24dp" />
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/emptyState"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="140dp"
+                android:src="@drawable/opay_empty_notif" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="No New Notifications"
+                android:textColor="#6A6A6A"
+                android:textSize="15sp"
+                android:fontFamily="@font/pay_poppins_medium" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
