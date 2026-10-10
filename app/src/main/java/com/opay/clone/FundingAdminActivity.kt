@@ -30,36 +30,55 @@ class FundingAdminActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (!AccountStore.exists(this, phone)) {
-                Toast.makeText(this, "No account registered with $phone", Toast.LENGTH_SHORT).show()
+            // Fast path: this device already knows the account.
+            if (AccountStore.exists(this, phone)) {
+                AccountStore.creditByPhone(this, phone, amount)
+                recordCredit(phone, amount)
+                showSuccess(phone, amount)
                 return@setOnClickListener
             }
 
-            AccountStore.creditByPhone(this, phone, amount)
-
-                // Record this credit as a txn so it appears in Transaction History
-                try {
-                    TxnLog.record(
-                        ctx        = this,
-                        type       = "Deposit",
-                        title      = "Transfer from Admin",
-                        amount     = amount,
-                        recipient  = "",
-                        senderName = "Peter Binary",
-                        account    = phone,
-                        status     = "Successful"
-                    )
-                    android.util.Log.d("FundingAdmin", "recorded deposit amount=$amount for phone=$phone")
-                } catch (e: Exception) {
-                    android.util.Log.e("FundingAdmin", "failed to record deposit: ${e.message}")
+            // Slow path: ask Firestore. Covers accounts registered on other devices.
+            AccountStore.creditCrossDevice(this, phone, amount) { ok ->
+                runOnUiThread {
+                    if (ok) {
+                        recordCredit(phone, amount)
+                        showSuccess(phone, amount)
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "No account registered with $phone",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
-
-            val naira = "\u20A6"
-            val formatted = String.format(Locale.US, "%,.2f", amount)
-            findViewById<TextView>(R.id.tvFundStatus).text = "$naira$formatted credited to $phone"
-
-            findViewById<EditText>(R.id.etFundPhone).setText("")
-            findViewById<EditText>(R.id.etFundAmount).setText("")
+            }
         }
+    }
+
+    private fun recordCredit(phone: String, amount: Double) {
+        try {
+            TxnLog.record(
+                ctx        = this,
+                type       = "Deposit",
+                title      = "Transfer from Admin",
+                amount     = amount,
+                recipient  = "",
+                senderName = "Peter Binary",
+                account    = phone,
+                status     = "Successful"
+            )
+            android.util.Log.d("FundingAdmin", "recorded deposit amount=$amount for phone=$phone")
+        } catch (e: Exception) {
+            android.util.Log.e("FundingAdmin", "failed to record deposit: ${e.message}")
+        }
+    }
+
+    private fun showSuccess(phone: String, amount: Double) {
+        val naira = "\u20A6"
+        val formatted = String.format(Locale.US, "%,.2f", amount)
+        findViewById<TextView>(R.id.tvFundStatus).text = "$naira$formatted credited to $phone"
+        findViewById<EditText>(R.id.etFundPhone).setText("")
+        findViewById<EditText>(R.id.etFundAmount).setText("")
     }
 }

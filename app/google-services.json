@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "759364014381",
+    "project_id": "opay-clone-c4ca0",
+    "storage_bucket": "opay-clone-c4ca0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759364014381:android:76d414b298a2566e1143a4",
+        "android_client_info": {
+          "package_name": "com.opay.clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkytNoOcuAsoMkCQ_J1LW7ZhIJpx4cNis"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

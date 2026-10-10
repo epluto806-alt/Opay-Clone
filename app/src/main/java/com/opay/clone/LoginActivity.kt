@@ -61,37 +61,72 @@ class LoginActivity : AppCompatActivity() {
         signupTv.text = signupSpan
 
         findViewById<MaterialButton>(R.id.btnNext).setOnClickListener {
-            if (!NetworkGate.requireOnline(this)) return@setOnClickListener
+            android.util.Log.d("LoginMarker", "btnNext tapped")
+            if (!NetworkGate.requireOnline(this)) {
+                android.util.Log.d("LoginMarker", "network gate blocked")
+                return@setOnClickListener
+            }
             val phone = findViewById<EditText>(R.id.etLoginField).text.toString().trim()
+            android.util.Log.d("LoginMarker", "phone=$phone")
 
-            // Account must be fully registered: exists + address saved + password set.
-            val exists = AccountStore.exists(this, phone)
-            val hasAddr = exists && AccountStore.hasAddress(this, phone)
-            val hasPw   = exists && !(AccountStore.getAccount(this, phone)?.password ?: "").isEmpty()
-
-            if (phone.isEmpty() || !exists || !hasAddr || !hasPw) {
+            if (phone.isEmpty()) {
+                android.util.Log.d("LoginMarker", "empty phone -> popup")
                 showNotRegisteredPopup(phone)
-            } else {
-                // Device binding check (Stage 2)
-                val boundDevice = AccountStore.getBoundDevice(this, phone)
-                val thisDevice  = DeviceId.get(this)
+                return@setOnClickListener
+            }
 
-                if (boundDevice == null) {
-                    // Legacy account without a bound device  bind it now
-                    AccountStore.bindDevice(this, phone, thisDevice)
-                    AccountStore.setCurrentPhone(this, phone)
-                    startActivity(Intent(this, WelcomeBackActivity::class.java))
-                } else if (boundDevice == thisDevice) {
-                    // Same device  allowed
-                    AccountStore.setCurrentPhone(this, phone)
-                    startActivity(Intent(this, WelcomeBackActivity::class.java))
+            val proceed = {
+                val exists  = AccountStore.exists(this, phone)
+                val hasPw   = exists && !(AccountStore.getAccount(this, phone)?.password ?: "").isEmpty()
+
+                // Address is a signup/onboarding concern — not a login requirement.
+                // It is not synced to Firestore, so we cannot require it here.
+                if (!exists || !hasPw) {
+                    showNotRegisteredPopup(phone)
                 } else {
-                    // Different device  block
-                    android.app.AlertDialog.Builder(this)
-                        .setTitle("Account Locked")
-                        .setMessage("These credentials are already registered on another device. Please create a new account.")
-                        .setPositiveButton("OK", null)
-                        .show()
+                    val boundDevice = AccountStore.getBoundDevice(this, phone)
+                    val thisDevice  = DeviceId.get(this)
+
+                    if (boundDevice == null || boundDevice == thisDevice) {
+                        AccountStore.bindDevice(this, phone, thisDevice)
+                        AccountStore.setCurrentPhone(this, phone)
+                        AccountStore.getAccount(this, phone)?.let {
+                            AppPrefs.setAccount(this, phone, it.password)
+                            AppPrefs.setName(this, it.name)
+                        }
+                        startActivity(Intent(this, WelcomeBackActivity::class.java))
+                    } else {
+                        // Cross-device: allow rebind on fresh login — this is a new phone
+                        // for the same account.
+                        AccountStore.bindDevice(this, phone, thisDevice)
+                        AccountStore.setCurrentPhone(this, phone)
+                        AccountStore.getAccount(this, phone)?.let {
+                            AppPrefs.setAccount(this, phone, it.password)
+                            AppPrefs.setName(this, it.name)
+                        }
+                        startActivity(Intent(this, WelcomeBackActivity::class.java))
+                    }
+                }
+            }
+
+            // Fast path: local account exists.
+            val localExists = AccountStore.exists(this, phone)
+            android.util.Log.d("LoginMarker", "localExists=$localExists")
+            if (localExists) {
+                proceed()
+                return@setOnClickListener
+            }
+
+            android.util.Log.d("LoginMarker", "calling FirestoreSync.hydrate")
+            // Slow path: ask Firestore. Hydrate local store, then proceed.
+            FirestoreSync.hydrate(this, phone) { found ->
+                android.util.Log.d("LoginMarker", "hydrate returned found=$found")
+                runOnUiThread {
+                    if (found) {
+                        proceed()
+                    } else {
+                        showNotRegisteredPopup(phone)
+                    }
                 }
             }
         }

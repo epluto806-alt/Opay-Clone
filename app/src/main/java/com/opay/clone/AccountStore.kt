@@ -12,6 +12,21 @@ data class Account(
     val pendingDeposit: Boolean
 )
 
+/**
+ * AccountStore
+ *
+ * Local SharedPreferences-backed store, MIRRORED to Firestore.
+ *
+ * Every write:
+ *   1. Updates local prefs (synchronous — so the whole app keeps working).
+ *   2. Pushes the same data to Firestore in the background.
+ *
+ * That way:
+ *   - The app's UI code stays synchronous. Nothing breaks.
+ *   - Two phones that both know a phone number see the same account in the cloud.
+ *
+ * Cross-device reads use FirestoreSync.lookup(). Regular reads stay local.
+ */
 object AccountStore {
     private const val FILE = "account_store"
     private const val CURRENT = "current_phone"
@@ -54,9 +69,21 @@ object AccountStore {
             .putString(kDev(p), "")
             .putBoolean(kPen(p), false)
             .apply()
+
+        // Mirror to cloud
+        FirestoreSync.push(
+            Account(
+                phone = p,
+                name = name,
+                balance = "0.00",
+                password = password,
+                deviceId = null,
+                pendingDeposit = false
+            )
+        )
     }
 
-    // ---- read ----
+    // ---- read (local) ----
     fun getAccount(ctx: Context, phone: String): Account? {
         val p = normalize(phone)
         val sp = prefs(ctx)
@@ -71,30 +98,69 @@ object AccountStore {
         )
     }
 
-    // ---- update ----
+    // ---- update (mirrored to cloud) ----
     fun updateName(ctx: Context, phone: String, name: String) {
-        prefs(ctx).edit().putString(kName(normalize(phone)), name).apply()
+        val p = normalize(phone)
+        prefs(ctx).edit().putString(kName(p), name).apply()
+        getAccount(ctx, p)?.let { FirestoreSync.push(it.copy(name = name)) }
     }
 
     fun updatePassword(ctx: Context, phone: String, password: String) {
-        prefs(ctx).edit().putString(kPw(normalize(phone)), password).apply()
+        val p = normalize(phone)
+        prefs(ctx).edit().putString(kPw(p), password).apply()
+        getAccount(ctx, p)?.let { FirestoreSync.push(it.copy(password = password)) }
     }
 
     fun setBalance(ctx: Context, phone: String, amount: String) {
-        prefs(ctx).edit().putString(kBal(normalize(phone)), amount).apply()
+        val p = normalize(phone)
+        prefs(ctx).edit().putString(kBal(p), amount).apply()
+        FirestoreSync.pushBalance(p, amount)
     }
 
-    // add to existing balance
+    // add to existing balance — cross-device mirror
     fun creditByPhone(ctx: Context, phone: String, amount: Double) {
         val p = normalize(phone)
         val sp = prefs(ctx)
         if (!sp.getBoolean(kExists(p), false)) return
         val current = sp.getString(kBal(p), "0.00")?.replace(",", "")?.toDoubleOrNull() ?: 0.0
         val newBal = current + amount
+        val newStr = String.format(Locale.US, "%.2f", newBal)
         sp.edit()
-            .putString(kBal(p), String.format(Locale.US, "%.2f", newBal))
+            .putString(kBal(p), newStr)
             .putBoolean(kPen(p), false)
             .apply()
+        FirestoreSync.pushBalance(p, newStr)
+    }
+
+    /**
+     * Cross-device credit for the admin panel:
+     * reads the account from Firestore, adds `amount`, writes back.
+     * Calls onDone(true) if it worked, onDone(false) if the phone isn't in the cloud.
+     */
+    fun creditCrossDevice(ctx: Context, phone: String, amount: Double, onDone: (Boolean) -> Unit) {
+        val p = normalize(phone)
+        FirestoreSync.lookup(p) { acct ->
+            if (acct == null) {
+                onDone(false)
+                return@lookup
+            }
+            val current = acct.balance.replace(",", "").toDoubleOrNull() ?: 0.0
+            val newBal = current + amount
+            val newStr = String.format(Locale.US, "%.2f", newBal)
+
+            // Local write-through (only affects this device's cache)
+            prefs(ctx).edit()
+                .putBoolean(kExists(p), true)
+                .putString(kName(p), acct.name)
+                .putString(kPw(p), acct.password)
+                .putString(kBal(p), newStr)
+                .putBoolean(kPen(p), false)
+                .apply()
+
+            // Cloud write
+            FirestoreSync.pushBalance(p, newStr)
+            onDone(true)
+        }
     }
 
     // ---- device binding ----
@@ -102,15 +168,11 @@ object AccountStore {
         prefs(ctx).getString(kDev(normalize(phone)), "")?.takeIf { it.isNotEmpty() }
 
     fun bindDevice(ctx: Context, phone: String, deviceId: String) {
-        prefs(ctx).edit().putString(kDev(normalize(phone)), deviceId).apply()
+        val p = normalize(phone)
+        prefs(ctx).edit().putString(kDev(p), deviceId).apply()
+        getAccount(ctx, p)?.let { FirestoreSync.push(it.copy(deviceId = deviceId)) }
     }
 
-    /**
-     * Returns true when the currently-running device is allowed to log in.
-     * - Bound device is null  -> allowed (legacy / never bound).
-     * - Bound device equals current device  -> allowed.
-     * - Otherwise  -> blocked.
-     */
     fun isDeviceAllowed(ctx: Context, phone: String): Boolean {
         val bound = getBoundDevice(ctx, phone) ?: return true
         val current = DeviceId.get(ctx)
@@ -119,7 +181,9 @@ object AccountStore {
 
     // ---- pending deposit flag ----
     fun setPending(ctx: Context, phone: String, value: Boolean) {
-        prefs(ctx).edit().putBoolean(kPen(normalize(phone)), value).apply()
+        val p = normalize(phone)
+        prefs(ctx).edit().putBoolean(kPen(p), value).apply()
+        getAccount(ctx, p)?.let { FirestoreSync.push(it.copy(pendingDeposit = value)) }
     }
 
     fun isPending(ctx: Context, phone: String): Boolean =
@@ -163,5 +227,20 @@ object AccountStore {
 
     fun hasPaymentPin(ctx: Context, phone: String): Boolean =
         getPaymentPin(ctx, phone).length == 4
-}
 
+    /**
+     * Write a full Account into local SharedPreferences.
+     * Used by FirestoreSync.hydrate() to restore a cloud account on a new device.
+     */
+    fun writeLocal(ctx: Context, a: Account) {
+        val p = normalize(a.phone)
+        prefs(ctx).edit()
+            .putBoolean(kExists(p), true)
+            .putString(kName(p), a.name)
+            .putString(kPw(p), a.password)
+            .putString(kBal(p), a.balance)
+            .putString(kDev(p), a.deviceId ?: "")
+            .putBoolean(kPen(p), a.pendingDeposit)
+            .apply()
+    }
+}
