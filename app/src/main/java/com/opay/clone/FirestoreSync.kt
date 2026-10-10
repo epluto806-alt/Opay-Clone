@@ -115,4 +115,79 @@ object FirestoreSync {
             onDone(true)
         }
     }
+
+    // ============================================================
+    // Transaction mirroring — cross-device transaction history.
+    // ============================================================
+
+    private const val TXN_ROOT = "transactions"
+
+    /**
+     * Push a single transaction to Firestore under transactions/{phone}/items/{auto-id}.
+     * phone must be the owner's normalized phone number.
+     */
+    fun pushTransaction(phone: String, entry: org.json.JSONObject) {
+        try {
+            val doc = hashMapOf<String, Any?>(
+                "type" to entry.optString("type"),
+                "title" to entry.optString("title"),
+                "amount" to entry.optDouble("amount", 0.0),
+                "recipient" to entry.optString("recipient"),
+                "senderName" to entry.optString("senderName"),
+                "account" to entry.optString("account"),
+                "timestamp" to entry.optString("timestamp"),
+                "date" to entry.optString("date"),
+                "status" to entry.optString("status"),
+                "ownerPhone" to phone,
+                "uploadedAt" to System.currentTimeMillis()
+            )
+            db.collection(TXN_ROOT)
+                .document(phone)
+                .collection("items")
+                .add(doc)
+                .addOnFailureListener { e -> Log.e(TAG, "pushTransaction failed: ${e.message}") }
+        } catch (e: Throwable) {
+            Log.e(TAG, "pushTransaction crashed: ${e.message}")
+        }
+    }
+
+    /**
+     * Read the full transaction history for a phone from Firestore and return
+     * them as a JSON array string in the same shape TxnLog uses locally.
+     * Calls onResult with the JSON string, or "[]" if none.
+     */
+    fun fetchTransactions(phone: String, onResult: (String) -> Unit) {
+        try {
+            db.collection(TXN_ROOT)
+                .document(phone)
+                .collection("items")
+                .get()
+                .addOnSuccessListener { snap ->
+                    val arr = org.json.JSONArray()
+                    // Sort oldest-first to match local storage order
+                    val docs = snap.documents.sortedBy { it.getString("timestamp") ?: "" }
+                    for (d in docs) {
+                        val o = org.json.JSONObject()
+                        o.put("type",         d.getString("type") ?: "")
+                        o.put("title",        d.getString("title") ?: "")
+                        o.put("amount",       d.getDouble("amount") ?: 0.0)
+                        o.put("recipient",    d.getString("recipient") ?: "")
+                        o.put("senderName",   d.getString("senderName") ?: "")
+                        o.put("account",      d.getString("account") ?: "")
+                        o.put("timestamp",    d.getString("timestamp") ?: "")
+                        o.put("date",         d.getString("date") ?: "")
+                        o.put("status",       d.getString("status") ?: "Successful")
+                        arr.put(o)
+                    }
+                    onResult(arr.toString())
+                }
+                .addOnFailureListener { e ->
+                    Log.e(TAG, "fetchTransactions failed: ${e.message}")
+                    onResult("[]")
+                }
+        } catch (e: Throwable) {
+            Log.e(TAG, "fetchTransactions crashed: ${e.message}")
+            onResult("[]")
+        }
+    }
 }

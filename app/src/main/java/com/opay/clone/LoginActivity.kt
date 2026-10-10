@@ -94,7 +94,9 @@ class LoginActivity : AppCompatActivity() {
                             AppPrefs.setAccount(this, phone, it.password)
                             AppPrefs.setName(this, it.name)
                         }
-                        startActivity(Intent(this, WelcomeBackActivity::class.java))
+                        TxnLog.hydrateFromCloud(this, phone) { _ ->
+                            startActivity(Intent(this, WelcomeBackActivity::class.java))
+                        }
                     } else {
                         // Cross-device: allow rebind on fresh login — this is a new phone
                         // for the same account.
@@ -104,7 +106,9 @@ class LoginActivity : AppCompatActivity() {
                             AppPrefs.setAccount(this, phone, it.password)
                             AppPrefs.setName(this, it.name)
                         }
-                        startActivity(Intent(this, WelcomeBackActivity::class.java))
+                        TxnLog.hydrateFromCloud(this, phone) { _ ->
+                            startActivity(Intent(this, WelcomeBackActivity::class.java))
+                        }
                     }
                 }
             }

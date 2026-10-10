@@ -40,6 +40,15 @@ object TxnLog {
         }
         arr.put(entry)
         prefs.edit().putString(KEY, arr.toString()).apply()
+
+        // Mirror to Firestore for cross-device transaction history.
+        try {
+            val owner = AccountStore.getCurrentPhone(ctx)
+            if (owner.isNotEmpty()) {
+                FirestoreSync.pushTransaction(owner, entry)
+            }
+        } catch (_: Throwable) { /* never crash the txn path */ }
+
         return arr.length() - 1
     }
 
@@ -53,7 +62,7 @@ object TxnLog {
     }
 
     // Raw JSON index (0 = oldest, length-1 = newest). What record() returns.
-    fun getByIndex(ctx: Context, rawIndex: Int): org.json.JSONObject? {
+    fun getByIndex(ctx: Context, rawIndex: Int): JSONObject? {
         val prefs = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
         val arr = JSONArray(prefs.getString(KEY, "[]"))
         if (rawIndex < 0 || rawIndex >= arr.length()) return null
@@ -61,7 +70,7 @@ object TxnLog {
     }
 
     // UI index (0 = newest). For history list taps.
-    fun getByUiIndex(ctx: Context, uiIndex: Int): org.json.JSONObject? {
+    fun getByUiIndex(ctx: Context, uiIndex: Int): JSONObject? {
         val prefs = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
         val arr = JSONArray(prefs.getString(KEY, "[]"))
         val rawIndex = arr.length() - 1 - uiIndex
@@ -72,5 +81,23 @@ object TxnLog {
     fun count(ctx: Context): Int {
         val prefs = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
         return JSONArray(prefs.getString(KEY, "[]")).length()
+    }
+
+    /**
+     * Replace the local transaction cache with the cloud version for a phone.
+     * Called on login, right after the account hydrates.
+     */
+    fun hydrateFromCloud(ctx: Context, phone: String, onDone: (Boolean) -> Unit) {
+        FirestoreSync.fetchTransactions(phone) { json ->
+            try {
+                ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+                    .edit()
+                    .putString(KEY, json)
+                    .apply()
+                onDone(true)
+            } catch (_: Throwable) {
+                onDone(false)
+            }
+        }
     }
 }
